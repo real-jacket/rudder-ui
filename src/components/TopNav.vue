@@ -1,6 +1,6 @@
 <template>
 <div class="top-nav">
-    <div class="log">LOGO</div>
+    <div class="log" @click="toggleMenue">LOGO</div>
     <ul class="menue">
         <li>菜单一</li>
         <li>菜单二</li>
@@ -9,8 +9,21 @@
 </template>
 
 <script lang="ts">
+import {
+    inject,
+    Ref
+} from 'vue'
 export default {
-    name: 'TopNav'
+    name: 'TopNav',
+    setup() {
+        const menueVisible = inject < Ref < Boolean > > ('menueVisible')
+        const toggleMenue = () => {
+            menueVisible.value = !menueVisible.value
+        }
+        return {
+            toggleMenue
+        }
+    }
 }
 </script>
 
@@ -21,12 +34,21 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
+    position: relative;
+    z-index: 10;
 
-    .menue {
+    >.log {
+        max-width: 6em;
+        margin-right: auto;
+    }
+
+    >.menue {
         display: flex;
+        white-space: nowrap;
+        flex-wrap: nowrap;
 
         li {
-            padding: 10px;
+            margin: 0 1em;
         }
     }
 }
