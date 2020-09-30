@@ -50,10 +50,6 @@ export default {
         background: lightblue;
         min-width: 150px;
         padding: 16px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        padding-top: 70px;
 
         >h2 {
             margin-bottom: 4px;
@@ -68,6 +64,15 @@ export default {
 
     .main {
         flex-flow: 1;
+    }
+
+    @media (max-width: 500px) {
+        aside {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 70px;
+        }
     }
 }
 </style>
