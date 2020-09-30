@@ -2021,6 +2021,11 @@ vite@^1.0.0-rc.1:
     vue "^3.0.0-rc.5"
     ws "^7.2.3"
 
+vue-router@^4.0.0-beta.12:
+  version "4.0.0-beta.12"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-beta.12.tgz?cache=0&sync_timestamp=1601130940653&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-beta.12.tgz#873d1bbd16882ab2ae35973e3e691412104f3914"
+  integrity sha1-hz0bvRaIKrKuNZc+PmkUEhBPORQ=
+
 vue@^3.0.0-rc.1, vue@^3.0.0-rc.5:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/vue/download/vue-3.0.0.tgz?cache=0&sync_timestamp=1600441298391&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue%2Fdownload%2Fvue-3.0.0.tgz#cfb5df5c34efce319b113a1667d12b74dcfd9c90"
