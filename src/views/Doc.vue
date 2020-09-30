@@ -1,24 +1,26 @@
 <template>
 <TopNav />
-<div class="content">
+<div class="layout">
     <aside class="aside" v-if="menueVisible">
         <h2>组件列表</h2>
-        <ol>
+        <ol class="nav">
             <li>
                 <router-link to="/doc/switch">Switch 组件</router-link>
             </li>
             <li>
-                <router-link to="/doc/switch">Button 组件</router-link>
+                <router-link to="/doc/button">Button 组件</router-link>
             </li>
             <li>
-                <router-link to="/doc/switch">Dialog 组件</router-link>
+                <router-link to="/doc/dialog">Dialog 组件</router-link>
             </li>
             <li>
-                <router-link to="/doc/switch">Tabs 组件</router-link>
+                <router-link to="/doc/tabs">Tabs 组件</router-link>
             </li>
         </ol>
     </aside>
-    <main class="main">主内容</main>
+    <main class="content">
+        <router-view></router-view>
+    </main>
 </div>
 </template>
 
@@ -43,13 +45,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content {
+.layout {
     display: flex;
+    min-height: calc(100vh - 52px);
 
     aside {
         background: lightblue;
         min-width: 150px;
         padding: 16px;
+        flex-shrink: 0;
 
         >h2 {
             margin-bottom: 4px;
@@ -62,8 +66,17 @@ export default {
         }
     }
 
-    .main {
-        flex-flow: 1;
+    .content {
+        flex-grow: 1;
+        background: lightgreen;
+        padding-top: 60px;
+        padding-left: 156px;
+        margin: 10px 0 0 10px;
+
+        @media (max-width: 500px) {
+            padding-left: 0;
+            margin-left: 0;
+        }
     }
 
     @media (max-width: 500px) {
