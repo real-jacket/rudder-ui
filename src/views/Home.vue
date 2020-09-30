@@ -1,11 +1,5 @@
 <template>
-<div class="top-nav">
-    <div class="log">LOGO</div>
-    <ul class="menue">
-        <li>菜单一</li>
-        <li>菜单二</li>
-    </ul>
-</div>
+<TopNav />
 <div class="banner">
     <h1>rudder ui</h1>
     <h2>一个简单的轮子</h2>
@@ -17,8 +11,12 @@
 </template>
 
 <script lang="ts">
+import TopNav from '../components/TopNav.vue';
 export default {
-    name: 'Home'
+    name: 'Home',
+    components: {
+        TopNav
+    }
 }
 </script>
 

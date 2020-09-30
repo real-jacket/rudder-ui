@@ -5,17 +5,3 @@
 li {
 	list-style: none;
 }
-
-.top-nav {
-	background: pink;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 16px;
-	.menue {
-		display: flex;
-		li {
-			padding: 10px;
-		}
-	}
-}
