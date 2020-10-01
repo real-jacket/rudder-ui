@@ -44,7 +44,6 @@ button {
         >span {
             left: calc(100% - #{$h2} - 2px);
         }
-
     }
 }
 
