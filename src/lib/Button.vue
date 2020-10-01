@@ -93,5 +93,19 @@ $radius: 4px;
             color: $blue;
         }
     }
+
+    &.rudder-size {
+        &-big {
+            font-size: 24px;
+            height: 48px;
+            padding: 0 16px
+        }
+
+        &-small {
+            font-size: 12px;
+            height: 20px;
+            padding: 0 4px;
+        }
+    }
 }
 </style>
