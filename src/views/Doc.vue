@@ -70,13 +70,11 @@ export default {
 
     .content {
         flex-grow: 1;
-        background: lightgreen;
         padding-top: 16px;
-        padding-left: 156px;
+        padding-left: 16px;
         margin: 10px 0 0 10px;
 
         @media (max-width: 500px) {
-            padding-left: 16px;
             margin-left: 0;
         }
     }
