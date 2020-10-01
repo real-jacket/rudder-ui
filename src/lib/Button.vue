@@ -1,5 +1,5 @@
 <template>
-<button class="rudder-button" :class="{[`rudder-theme-${theme}`]:theme}">
+<button class="rudder-button" :class="classes">
     <slot></slot>
 </button>
 </template>
@@ -11,8 +11,26 @@ export default {
         theme: {
             type: String,
             default: 'button'
+        },
+        size: {
+            type: String,
+            default: 'normal'
         }
     },
+    setup(props, context) {
+        const {
+            theme,
+            size
+        } = props
+        const classes = {
+            [`rudder-theme-${theme}`]: theme,
+            [`rudder-size-${size}`]: size
+        }
+
+        return {
+            classes
+        }
+    }
 }
 </script>
 
@@ -35,6 +53,7 @@ $radius: 4px;
     color: $color;
     border: 1px solid $border-color;
     box-shadow: 0 1px 0 fade-out(black, 0.95);
+    cursor: pointer;
 
     &+& {
         margin-left: 8px;
@@ -52,6 +71,27 @@ $radius: 4px;
 
     &::-moz-focus-inner {
         border: 0;
+    }
+
+    &.rudder-theme {
+        &-link {
+            border: none;
+            background: white;
+            box-shadow: none;
+
+            &:hover,
+            &:focus {
+                background: #fafafa;
+                color: $color;
+            }
+        }
+
+        &-text {
+            border: none;
+            background: white;
+            box-shadow: none;
+            color: $blue;
+        }
     }
 }
 </style>
