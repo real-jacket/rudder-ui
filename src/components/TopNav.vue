@@ -1,6 +1,6 @@
 <template>
 <div class="top-nav">
-    <div class="logo">LOGO</div>
+    <div class="logo" @click="toHome">LOGO</div>
     <ul class="menue">
         <li>菜单一</li>
         <li>菜单二</li>
@@ -23,6 +23,11 @@ export default {
         }
         return {
             toggleMenue
+        }
+    },
+    methods: {
+        toHome() {
+            this.$router.push('/')
         }
     }
 }

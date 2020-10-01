@@ -54,6 +54,8 @@ export default {
         min-width: 150px;
         padding: 16px;
         flex-shrink: 0;
+        position: relative;
+        z-index: 999;
 
         >h2 {
             margin-bottom: 4px;
@@ -69,12 +71,12 @@ export default {
     .content {
         flex-grow: 1;
         background: lightgreen;
-        padding-top: 60px;
+        padding-top: 16px;
         padding-left: 156px;
         margin: 10px 0 0 10px;
 
         @media (max-width: 500px) {
-            padding-left: 0;
+            padding-left: 16px;
             margin-left: 0;
         }
     }
