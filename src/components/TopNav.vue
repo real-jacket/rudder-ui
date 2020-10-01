@@ -41,7 +41,7 @@ export default {
     align-items: center;
     padding: 16px;
     position: relative;
-    z-index: 10;
+    z-index: 1000;
 
     >.logo {
         max-width: 6em;
