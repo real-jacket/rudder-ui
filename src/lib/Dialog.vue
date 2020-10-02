@@ -1,22 +1,25 @@
 <template>
 <template v-if="visible">
-    <div class="rudder-dialog-mask" @click="closeOnClikMask"></div>
-    <div class="rudder-dialog-wrapper">
-        <div class="rudder-dialog">
+    <teleport to='body'>
+        <div class="rudder-dialog-mask" @click="closeOnClikMask"></div>
+        <div class="rudder-dialog-wrapper">
+            <div class="rudder-dialog">
 
-            <header>
-                <slot name="title">{{title}}</slot>
-                <span class="rudder-dialog-close" @click="close"></span>
-            </header>
-            <main>
-                <slot />
-            </main>
-            <footer>
-                <Button @click='cancel'>cancel</Button>
-                <Button level="main" @click="ok">ok</Button>
-            </footer>
+                <header>
+                    <slot name="title">{{title}}</slot>
+                    <span class="rudder-dialog-close" @click="close"></span>
+                </header>
+                <main>
+                    <slot />
+                </main>
+                <footer>
+                    <Button @click='cancel'>cancel</Button>
+                    <Button level="main" @click="ok">ok</Button>
+                </footer>
+            </div>
         </div>
-    </div>
+    </teleport>
+
 </template>
 </template>
 
