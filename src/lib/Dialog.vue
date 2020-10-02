@@ -5,7 +5,7 @@
         <div class="rudder-dialog">
 
             <header>
-                {{title}}
+                <slot name="title">{{title}}</slot>
                 <span class="rudder-dialog-close" @click="close"></span>
             </header>
             <main>
@@ -30,7 +30,7 @@ export default {
     props: {
         title: {
             type: String,
-            default: '标题'
+            default: '提示'
         },
         visible: {
             type: Boolean,
@@ -84,6 +84,7 @@ $border-color: #d9d9d9;
     border: 1px solid $border-color;
     min-width: 15em;
     max-width: 90%;
+    box-shadow: 0 0 3px fade_out(black, 0.5);
 
     &-mask {
         position: fixed;
@@ -103,7 +104,6 @@ $border-color: #d9d9d9;
         left: 50%;
         transform: translateX(-50%);
         z-index: 11;
-        box-shadow: 0 0 3px fade_out(black, 0.5);
     }
 
     >header {
