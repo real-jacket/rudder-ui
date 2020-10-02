@@ -1,5 +1,6 @@
 <template>
 <button class="rudder-button" :class="classes" :disabled='disabled'>
+    <span v-if="loading" class="rudder-loadingIndicator"></span>
     <slot></slot>
 </button>
 </template>
@@ -23,18 +24,24 @@ export default {
         disabled: {
             type: Boolean,
             default: false
+        },
+        loading: {
+            type: Boolean,
+            default: false
         }
     },
     setup(props, context) {
         const {
             theme,
             size,
-            level
+            level,
+            loading
         } = props
         const classes = {
             [`rudder-theme-${theme}`]: theme,
             [`rudder-size-${size}`]: size,
-            [`rudder-level-${level}`]: level
+            [`rudder-level-${level}`]: level,
+            [`rudder-button-loading`]: loading
         }
 
         return {
@@ -200,6 +207,28 @@ $grey:grey;
             cursor: not-allowed;
             color: $grey;
         }
+    }
+
+    @keyframes loading {
+        0% {
+            transform: rotate(0);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    >.rudder-loadingIndicator {
+        height: 12px;
+        width: 12px;
+        margin-right: 4px;
+        display: inline-block;
+        border-radius: 50%;
+        border-width: 2px;
+        border-color: $blue $blue transparent $blue;
+        border-style: solid;
+        animation: loading 1s infinite linear;
     }
 }
 </style>
