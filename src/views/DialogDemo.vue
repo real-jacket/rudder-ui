@@ -1,6 +1,6 @@
 <template>
 <Button level="main" @click="toggle">open Dialog</Button>
-<Dialog title="标题" v-model:visible="visible">
+<Dialog title="标题" v-model:visible="visible" :closeOnClickMask='false' :ok="ok">
     <p>第一行内容。。。。</p>
     <p>第二行内容。。。。</p>
     <p>第三行内容。。。。</p>
@@ -24,9 +24,13 @@ export default {
         const toggle = () => {
             visible.value = !visible.value
         }
+        const ok = () => {
+            return true
+        }
         return {
             visible,
-            toggle
+            toggle,
+            ok
         }
     }
 }

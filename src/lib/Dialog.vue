@@ -1,6 +1,6 @@
 <template>
 <template v-if="visible">
-    <div class="rudder-dialog-mask"></div>
+    <div class="rudder-dialog-mask" @click="closeOnClikMask"></div>
     <div class="rudder-dialog-wrapper">
         <div class="rudder-dialog">
 
@@ -12,8 +12,8 @@
                 <slot />
             </main>
             <footer>
-                <Button>cancel</Button>
-                <Button level="main">ok</Button>
+                <Button @click='cancel'>cancel</Button>
+                <Button level="main" @click="ok">ok</Button>
             </footer>
         </div>
     </div>
@@ -35,14 +35,40 @@ export default {
         visible: {
             type: Boolean,
             default: false
-        }
+        },
+        closeOnClickMask: {
+            type: Boolean,
+            default: true
+        },
+        ok: Function,
+        cancel: Function
     },
     setup(props, context) {
         const close = () => {
             context.emit('update:visible', !props.visible)
         }
+        const ok = () => {
+            if (props.ok?.() === true) {
+                close()
+            }
+        }
+        const cancel = () => {
+            if (props.cancel) {
+                cancel()
+            }
+            close()
+        }
+
+        const closeOnClikMask = () => {
+            if (props.closeOnClickMask) {
+                close()
+            }
+        }
         return {
-            close
+            close,
+            ok,
+            cancel,
+            closeOnClikMask
         }
     }
 }
