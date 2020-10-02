@@ -10,6 +10,7 @@
                     <span class="rudder-dialog-close" @click="close"></span>
                 </header>
                 <main>
+                    <slot name="content" />
                     <slot />
                 </main>
                 <footer>
@@ -56,9 +57,7 @@ export default {
             }
         }
         const cancel = () => {
-            if (props.cancel) {
-                cancel()
-            }
+            props.cancel?.()
             close()
         }
 
