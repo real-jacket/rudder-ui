@@ -198,7 +198,6 @@ $grey:grey;
                 border-color: $border-color;
             }
         }
-
     }
 
     &.rudder-theme-link,
