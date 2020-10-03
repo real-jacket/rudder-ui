@@ -1,5 +1,5 @@
 <template>
-<div>这是 tabItem</div>
+<slot />
 </template>
 
 <script lang="ts">
