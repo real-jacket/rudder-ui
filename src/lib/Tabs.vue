@@ -1,7 +1,8 @@
 <template>
 <div class="rudder-tabs">
-    <div class="rudder-tabs-nav">
-        <div class="rudder-tabs-nav-item" :class="{'selected':selected === t}" @click="select(t)" v-for="(t,index) in titles" :key="index">{{t}}</div>
+    <div class="rudder-tabs-nav" ref="nav">
+        <div class="rudder-tabs-nav-item" v-for="(t,index) in titles" :ref="el => {if(t === selected) {selectedItem = el }}" :class="{'selected':selected === t}" @click="select(t)" :key="index">{{t}}</div>
+        <div class="rudder-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="rudder-tabs-content">
         <component :key="current.props.title" :is="current" />
@@ -11,7 +12,10 @@
 
 <script lang="ts">
 import {
-    computed
+    computed,
+    onMounted,
+    ref,
+    watchEffect
 } from 'vue';
 import TabItem from './TabItem.vue';
 export default {
@@ -26,24 +30,42 @@ export default {
                 throw new Error('Tabs 标签下只能有 TabItem')
             }
         })
-        const titles = children.map(child => {
-            return child.props.title
-        })
-
+        const titles = children.map(child => child.props.title)
         const current = computed(() => {
-            return children.find(child => {
-                return child.props.title === props.selected
-            })
+            return children.find(child => child.props.title === props.selected)
         })
-
         const select = (title) => {
             context.emit('update:selected', title)
         }
+
+        const nav = ref < HTMLDivElement > (null)
+        const selectedItem = ref < HTMLDivElement > (null)
+        const indicator = ref < HTMLDivElement > (null)
+
+        onMounted(() => {
+            watchEffect(() => {
+                const {
+                    width,
+                    left: left2
+                } = selectedItem.value.getBoundingClientRect()
+                indicator.value.style.width = width + 'px'
+
+                const {
+                    left: left1
+                } = nav.value.getBoundingClientRect()
+                const left = left2 - left1
+                indicator.value.style.left = left + 'px'
+            })
+        })
+
         return {
             children,
             titles,
             current,
-            select
+            select,
+            nav,
+            selectedItem,
+            indicator
         }
     }
 }
@@ -72,6 +94,18 @@ $border-color: #d9d9d9;
             &.selected {
                 color: $blue;
             }
+        }
+
+        position: relative;
+
+        &-indicator {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            height: 3px;
+            width: 20px;
+            background: $blue;
+            transition: all 250ms ease-in-out;
         }
 
     }
