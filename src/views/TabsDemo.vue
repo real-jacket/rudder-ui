@@ -1,9 +1,11 @@
 <template>
 <h1>示例1</h1>
 <div>
-    <Tab>
+    <Tabs>
         <TabItem></TabItem>
-    </Tab>
+        <TabItem></TabItem>
+        <TabItem></TabItem>
+    </Tabs>
 </div>
 </template>
 
