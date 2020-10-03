@@ -1,18 +1,24 @@
 <template>
 <div class="rudder-tabs">
     <div class="rudder-tabs-nav">
-        <div class="rudder-tabs-nav-item" v-for="(t,index) in titles" :key="index">{{t}}</div>
+        <div class="rudder-tabs-nav-item" :class="{'selected':selected === t}" @click="select(t)" v-for="(t,index) in titles" :key="index">{{t}}</div>
     </div>
     <div class="rudder-tabs-content">
-        <component v-for="(c,index) in children" :key="index" :is="c" />
+        <component :key="current.props.title" :is="current" />
     </div>
 </div>
 </template>
 
 <script lang="ts">
+import {
+    computed
+} from 'vue';
 import TabItem from './TabItem.vue';
 export default {
     name: 'Tabs',
+    props: {
+        selected: String
+    },
     setup(props, context) {
         const children = context.slots.default()
         children.forEach(child => {
@@ -23,9 +29,21 @@ export default {
         const titles = children.map(child => {
             return child.props.title
         })
+
+        const current = computed(() => {
+            return children.find(child => {
+                return child.props.title === props.selected
+            })
+        })
+
+        const select = (title) => {
+            context.emit('update:selected', title)
+        }
         return {
             children,
-            titles
+            titles,
+            current,
+            select
         }
     }
 }
@@ -50,11 +68,12 @@ $border-color: #d9d9d9;
             &:first-child {
                 margin-left: 0;
             }
+
+            &.selected {
+                color: $blue;
+            }
         }
 
-        &.selected {
-            color: $blue;
-        }
     }
 
     &-content {
