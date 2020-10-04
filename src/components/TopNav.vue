@@ -1,11 +1,27 @@
 <template>
 <div class="top-nav">
-    <div class="logo" @click="toHome">LOGO</div>
+    <div class="logo" @click="toHome">
+        <svg class="icon">
+            <use xlink:href="#icon-rudderA"></use>
+        </svg>
+    </div>
     <ul class="menue">
-        <li>菜单一</li>
-        <li>菜单二</li>
+        <li>
+            <router-link to="/doc">文档</router-link>
+        </li>
+        <li>
+            <router-link to="/doc">组件</router-link>
+        </li>
+        <li>
+            <a href="https://github.com/real-jacket/rudder-ui" target="_blank">
+                <svg class="icon">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+                Github
+            </a>
+        </li>
     </ul>
-    <span class="toggleAside" @click="toggleMenue"></span>
+    <span v-if="toggleVisible" class="toggleAside" @click="toggleMenue"></span>
 </div>
 </template>
 
@@ -16,6 +32,12 @@ import {
 } from 'vue'
 export default {
     name: 'TopNav',
+    props: {
+        toggleVisible: {
+            type: Boolean,
+            default: false
+        }
+    },
     setup() {
         const menueVisible = inject < Ref < Boolean > > ('menueVisible')
         const toggleMenue = () => {
@@ -34,27 +56,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$green:#1e9072;
+
 .top-nav {
-    background: pink;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
+    padding: 20px 40px;
     position: relative;
     z-index: 1000;
 
     >.logo {
-        max-width: 6em;
         margin-right: auto;
+        cursor: pointer;
+
+        svg {
+            width: 60px;
+            height: 60px;
+        }
     }
 
     >.menue {
         display: flex;
         white-space: nowrap;
         flex-wrap: nowrap;
+        font-size: 20px;
 
         li {
             margin: 0 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                margin-right: 6px;
+            }
+
+            &:hover {
+                color: $green;
+            }
         }
     }
 

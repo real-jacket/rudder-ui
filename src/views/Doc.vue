@@ -1,5 +1,5 @@
 <template>
-<TopNav />
+<TopNav :toggleVisible="toggleVisible" />
 <div class="layout">
     <aside class="aside" v-if="menueVisible">
         <h2>组件列表</h2>
@@ -27,6 +27,7 @@
 <script lang="ts">
 import {
     inject,
+    ref,
     Ref
 } from 'vue';
 import TopNav from '../components/TopNav.vue';
@@ -37,8 +38,10 @@ export default {
     },
     setup() {
         const menueVisible = inject < Ref < Boolean >> ('menueVisible')
+        const toggleVisible = ref(true)
         return {
-            menueVisible
+            menueVisible,
+            toggleVisible
         }
     }
 }
