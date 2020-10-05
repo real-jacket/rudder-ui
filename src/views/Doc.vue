@@ -10,8 +10,11 @@
             <li>
                 <router-link to="/doc/install">安装</router-link>
             </li>
+            <li>
+                <router-link to="/doc/start">快速开始</router-link>
+            </li>
         </ol>
-        <h2>组件列表</h2>
+        <h2>基础组件</h2>
         <ol class="nav">
             <li>
                 <router-link to="/doc/switch">Switch 组件</router-link>
@@ -119,6 +122,7 @@ $background:#89cebc;
     .content {
         flex-grow: 1;
         padding-left: 16px;
+        padding-right: 16px;
         margin: 10px 0 0 10px;
 
         @media (max-width: 500px) {
