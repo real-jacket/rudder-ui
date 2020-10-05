@@ -7,10 +7,10 @@
     </div>
     <ul class="menue">
         <li>
-            <router-link to="/doc">文档</router-link>
+            <router-link to="/doc/intro">文档</router-link>
         </li>
         <li>
-            <router-link to="/doc">组件</router-link>
+            <router-link to="/doc/switch">组件</router-link>
         </li>
         <li>
             <a href="https://github.com/real-jacket/rudder-ui" target="_blank">
@@ -62,17 +62,17 @@ $green:#1e9072;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 0 40px;
     position: relative;
-    z-index: 1000;
+    box-shadow: 0 2px 8px #f0f1f2;
 
     >.logo {
         margin-right: auto;
         cursor: pointer;
 
         svg {
-            width: 60px;
-            height: 60px;
+            width: 36px;
+            height: 36px;
         }
     }
 
@@ -87,13 +87,27 @@ $green:#1e9072;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 20px 0;
 
             svg {
                 margin-right: 6px;
             }
 
+            position: relative;
+
             &:hover {
                 color: $green;
+
+                &:before {
+                    display: block;
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 2px;
+                    width: 100%;
+                    background: $green;
+                }
             }
         }
     }
@@ -107,6 +121,7 @@ $green:#1e9072;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 1000;
     }
 
     @media (max-width: 500px) {

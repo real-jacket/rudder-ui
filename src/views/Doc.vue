@@ -2,6 +2,15 @@
 <TopNav :toggleVisible="toggleVisible" />
 <div class="layout">
     <aside class="aside" v-if="menueVisible">
+        <h2>文档</h2>
+        <ol class="nav">
+            <li>
+                <router-link to="/doc/intro">介绍</router-link>
+            </li>
+            <li>
+                <router-link to="/doc/install">安装</router-link>
+            </li>
+        </ol>
         <h2>组件列表</h2>
         <ol class="nav">
             <li>
@@ -48,32 +57,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$line:#f0f0f0;
+$green:#1e9072;
+$background:#89cebc;
+
 .layout {
     display: flex;
-    min-height: calc(100vh - 52px);
+    margin-top: 30px;
+    min-height: calc(100vh - 100px);
 
     aside {
-        background: lightblue;
         min-width: 150px;
-        padding: 16px;
         flex-shrink: 0;
         position: relative;
         z-index: 999;
+        border-right: 1px solid $line;
+        background: white;
 
         >h2 {
-            margin-bottom: 4px;
+            margin: 4px 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid $line;
         }
 
         >ol {
             >li {
-                padding: 4px 0;
+
+                &:hover {
+                    color: $green;
+                }
+
+                a {
+                    padding: 16px 40px;
+                    min-width: 14em;
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                >.router-link-exact-active {
+                    position: relative;
+                    background: rgba($color: $background, $alpha: 0.6);
+                    display: inline-block;
+                    color: $green;
+
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        right: 0;
+                        top: 0;
+                        width: 4px;
+                        height: 100%;
+                        background: $green;
+                    }
+                }
             }
         }
     }
 
     .content {
         flex-grow: 1;
-        padding-top: 16px;
         padding-left: 16px;
         margin: 10px 0 0 10px;
 
