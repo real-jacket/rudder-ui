@@ -1,3 +1,6 @@
+<demo>
+    测试demo
+</demo>
 <template>
 <Switch v-model:value='checked' />
 </template>
@@ -6,9 +9,8 @@
 import {
     ref
 } from 'vue';
-import Switch from '../lib/Switch.vue';
+import Switch from '../../lib/Switch.vue';
 export default {
-    name: 'SwitchDemo',
     components: {
         Switch
     },

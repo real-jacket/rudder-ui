@@ -1,0 +1,24 @@
+<template>
+<h1>Switch 切换</h1>
+<Demo :component='SwitchDemo1'></Demo>
+</template>
+
+<script lang="ts">
+import {
+    ref
+} from 'vue';
+import Switch from '../lib/Switch.vue';
+import SwitchDemo1 from './SwitchDemos/Switc1.demo.vue'
+export default {
+    components: {
+        Switch
+    },
+    setup() {
+        const checked = ref(false)
+        return {
+            checked,
+            SwitchDemo1
+        }
+    }
+}
+</script>

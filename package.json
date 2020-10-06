@@ -8,6 +8,7 @@
   "dependencies": {
     "github-markdown-css": "^4.0.0",
     "marked": "^1.2.0",
+    "prismjs": "^1.21.0",
     "vue": "^3.0.0-rc.1",
     "vue-router": "^4.0.0-beta.12"
   },
