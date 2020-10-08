@@ -1,5 +1,8 @@
 <demo>
-测试demo
+    <title>api调用</title>
+    <p>
+        通过api 的方式打开对话框
+    </p>
 </demo>
 <template>
 <Button level="main" @click="showDialog">open Dialog</Button>

@@ -1,5 +1,8 @@
 <demo>
-    测试demo
+    <title>基本</title>
+    <p>
+        第一个对话框
+    </p>
 </demo>
 <template>
 <Button level="main" @click="toggle">open Dialog</Button>

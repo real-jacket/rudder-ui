@@ -4,8 +4,8 @@
         <component :is="component" />
     </div>
     <div class="demo-description">
-        <p class="demo-description-title">基本</p>
-        <p class="demo-description-desc">基本描述</p>
+        <p class="demo-description-title">{{component.__sourceCodeTitle}}</p>
+        <p class="demo-description-desc">{{component.__sourceCodeDesc}}</p>
     </div>
     <div class="demo-actions">
         <span @click="toggleCode">查看代码</span>
@@ -35,7 +35,6 @@ export default {
         component: Object
     },
     setup(props, context) {
-        console.log(props.component)
         const codeVisible = ref(false)
 
         const toggleCode = () => {
@@ -62,6 +61,10 @@ $border:#f0f0f0;
     border: 1px solid $border;
     margin-top: 20px;
     margin-right: 20px;
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
 
     &-component {
         padding: 42px 24px 50px;
@@ -103,6 +106,10 @@ $border:#f0f0f0;
 
     &-code {
         display: block;
+
+        .language-html {
+            margin-bottom: 0;
+        }
     }
 }
 </style>

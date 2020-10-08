@@ -84,9 +84,13 @@ $border-color: #d9d9d9;
     background: white;
     border-radius: $radius;
     border: 1px solid $border-color;
-    min-width: 15em;
-    max-width: 90%;
+    min-width: 500px;
     box-shadow: 0 0 3px fade_out(black, 0.5);
+    display: block;
+
+    @media (max-width: 960px) {
+        min-width: 50vw;
+    }
 
     &-mask {
         position: fixed;
@@ -94,10 +98,9 @@ $border-color: #d9d9d9;
         left: 0;
         right: 0;
         bottom: 0;
-        width: 100%;
         height: 100%;
         background: fade_out(black, 0.5);
-        z-index: 10;
+        z-index: 1000;
     }
 
     &-wrapper {
@@ -105,7 +108,7 @@ $border-color: #d9d9d9;
         top: 200px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 11;
+        z-index: 1001;
     }
 
     >header {

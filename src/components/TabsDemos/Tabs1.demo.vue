@@ -1,5 +1,6 @@
 <demo>
-    测试demo
+    <title>基本使用</title>
+    <p>默认选中第一项</p>
 </demo>
 <template>
 <Tabs v-model:selected="selected">

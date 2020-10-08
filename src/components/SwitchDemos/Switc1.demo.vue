@@ -1,5 +1,6 @@
 <demo>
-    测试demo
+   <title>基本</title>
+   <p>最简单的用法</p>
 </demo>
 <template>
 <Switch v-model:value='checked' />

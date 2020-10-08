@@ -1,5 +1,8 @@
 <demo>
-    测试demo
+    <title>按钮状态</title>
+    <p>
+        按钮有三种状态，通过设置 level 为 main、danger 分别把按钮状态设为主要、危险状态。若不设置 level，则状态默认为一般正常状态 normal。
+    </p>
 </demo>
 <template>
 <div>
