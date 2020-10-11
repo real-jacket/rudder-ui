@@ -3,7 +3,7 @@ name: Doc Build and Deploy
 on:
   push:
       tags:
-        - doc:v*
+        - v.*(-doc)$
   pull_request:
     branches:
       - master
