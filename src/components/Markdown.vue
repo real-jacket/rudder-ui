@@ -10,19 +10,23 @@ import {
 export default {
     name: 'MarkDown',
     props: {
-        path: {
+        // path: {
+        //     type: String,
+        //     required: true
+        // }
+        content: {
             type: String,
             required: true
         }
     },
-    setup(props) {
-        const content = ref < string > (null)
-        import(props.path).then(result => {
-            content.value = result.default
-        })
-        return {
-            content
-        }
-    }
+    // setup(props) {
+    //     const content = ref < string > (null)
+    //     import(props.path).then(result => {
+    //         content.value = result.default
+    //     })
+    //     return {
+    //         content
+    //     }
+    // }
 }
 </script>
