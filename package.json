@@ -1,6 +1,11 @@
 {
   "name": "rudder-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "files": [
+    "dist/lib/*"
+  ],
+  "main": "dist/lib/rudder.js",
+  "module": "dist/lib/rudder.esm.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
