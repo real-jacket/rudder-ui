@@ -17,8 +17,8 @@ jobs:
       - name: build
         run: |
           npm install
-          npm install -g rollup
-          rollup -c
+          npm install --dev sass
+          npm run build:pkg
       - id: publish
         uses: JS-DevTools/npm-publish@v1
         with:
