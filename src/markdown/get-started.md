@@ -8,6 +8,12 @@
 import {Button, Tabs, Switch, Dialog} from "rudder-ui"
 ```
 
+全局引入样式
+
+```
+import 'rudder-ui/dist/lib/rudder.css'
+```
+
 就可以使用我提供的组件了。
 
 ## Vue 单文件组件

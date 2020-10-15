@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './lib/rudder.scss'
+import 'rudder-ui/dist/lib/rudder.css'
 import './index.scss'
 import './assets/iconfont'
 import App from './App.vue'

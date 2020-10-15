@@ -17,8 +17,8 @@
 </template>
 
 <script lang="ts">
-import Dialog from '../../lib/Dialog.vue';
-import Button from '../../lib/Button.vue';
+import {Dialog} from 'rudder-ui';
+import {Button} from 'rudder-ui'
 import {
     ref
 } from 'vue';

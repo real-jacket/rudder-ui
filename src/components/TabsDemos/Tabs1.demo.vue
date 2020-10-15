@@ -11,8 +11,8 @@
 </template>
 
 <script lang="ts">
-import Tabs from '../../lib/Tabs.vue';
-import TabItem from '../../lib/TabItem.vue';
+import {Tabs} from 'rudder-ui';
+import {TabItem} from 'rudder-ui';
 import {
     ref
 } from 'vue';

@@ -12,7 +12,7 @@
 import {
     openDialog
 } from '../../lib/openDialog'
-import Button from '../../lib/Button.vue'
+import {Button} from 'rudder-ui'
 export default {
     components: {
         Button
