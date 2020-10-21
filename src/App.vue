@@ -20,6 +20,7 @@ export default {
         router.afterEach(() => {
             if (width <= 500) {
                 menueVisible.value = false
+                document.body.style.overflow = menueVisible.value?'hidden':'auto'
             }
         })
     }

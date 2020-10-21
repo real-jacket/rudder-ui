@@ -21,7 +21,11 @@
             </a>
         </li>
     </ul>
-    <span v-if="toggleVisible" class="toggleAside" @click="toggleMenue"></span>
+    <span v-if="toggleVisible" class="toggleAside" @click="toggleMenue">
+        <svg class="icon">
+            <use xlink:href="#icon-caidan"></use>
+        </svg>
+    </span>
 </div>
 </template>
 
@@ -42,6 +46,7 @@ export default {
         const menueVisible = inject < Ref < Boolean > > ('menueVisible')
         const toggleMenue = () => {
             menueVisible.value = !menueVisible.value
+            document.body.style.overflow = menueVisible.value?'hidden':'auto'
         }
         return {
             toggleMenue
@@ -116,21 +121,30 @@ $green:#1e9072;
         display: none;
         width: 24px;
         height: 24px;
-        background: red;
         position: absolute;
         left: 16px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 1000;
+        >svg{
+            width: 100%;
+            height: 100%;
+        }
     }
 
     @media (max-width: 500px) {
+        box-shadow: none;
+        padding: 10px 0;
         >.menue {
             display: none;
         }
 
         >.logo {
             margin: 0 auto;
+            >.icon{
+                width: 40px;
+                height: 40px;
+            }
         }
 
         >.toggleAside {

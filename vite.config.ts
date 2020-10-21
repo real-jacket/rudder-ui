@@ -17,10 +17,10 @@ export default {
 			})
 			const main = file.split(parsed.loc.source).join('').trim()
 			return `export default function (Component) {
-        Component.__sourceCode = ${JSON.stringify(main)}
-		Component.__sourceCodeTitle = ${JSON.stringify(title)}
-		Component.__sourceCodeDesc = ${JSON.stringify(desc)}
-      }`.trim()
+				Component.__sourceCode = ${JSON.stringify(main)}
+				Component.__sourceCodeTitle = ${JSON.stringify(title)}
+				Component.__sourceCodeDesc = ${JSON.stringify(desc)}
+			}`.trim()
 		},
 	},
 }

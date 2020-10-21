@@ -135,6 +135,7 @@ $background:#89cebc;
             position: fixed;
             top: 0;
             left: 0;
+            bottom: 0;
             padding-top: 70px;
         }
     }
