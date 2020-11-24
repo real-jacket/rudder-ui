@@ -22,13 +22,13 @@ yarn add rudder-ui
 
 全局引入样式
 
-```
+```js
 import 'rudder-ui/dist/lib/rudder.css'
 ```
 
 使用组件
 
-```
+```js
 import {Button, Tabs, Switch, Dialog} from "rudder-ui"
 ```
 
@@ -36,7 +36,7 @@ import {Button, Tabs, Switch, Dialog} from "rudder-ui"
 
 代码示例：
 
-```
+```vue
 <template>
   <div>
     <Button>按钮</Button>
