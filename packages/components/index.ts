@@ -1,0 +1,6 @@
+export { default as Switch } from './switch/Switch.vue'
+export { default as Button } from './button/Button.vue'
+export { default as Tabs } from './tabs/Tabs.vue'
+export { default as TabItem } from './tabs/TabItem.vue'
+export { default as Dialog } from './dialog/Dialog.vue'
+export { openDialog } from './open-dialog/openDialog'

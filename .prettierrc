@@ -1,0 +1,14 @@
+{
+  "semi": false,
+  "singleQuote": true,
+  "useTabs": true,
+  "tabWidth": 1,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
