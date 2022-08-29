@@ -30,7 +30,7 @@ export default {
 	props: {
 		component: Object,
 	},
-	setup(props, context) {
+	setup(props: any, context: any) {
 		const codeVisible = ref(false)
 
 		const toggleCode = () => {

@@ -6,7 +6,9 @@
 	],
 	"version": "0.0.1",
 	"scripts": {
-		"docs:dev": "pnpm run -C docs dev"
+		"docs:dev": "pnpm run -C docs dev",
+		"docs:build": "pnpm run -C docs build",
+		"build:component": "pnpm run -C packages/components build"
 	},
 	"devDependencies": {
 		"@types/node": "^18.7.13",

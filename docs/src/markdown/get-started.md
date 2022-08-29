@@ -4,13 +4,13 @@
 
 然后在你的代码中写入下面的代码
 
-```
+```js
 import {Button, Tabs, Switch, Dialog} from "rudder-ui"
 ```
 
 全局引入样式
 
-```
+```js
 import 'rudder-ui/dist/lib/rudder.css'
 ```
 
