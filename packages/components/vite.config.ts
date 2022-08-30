@@ -3,6 +3,8 @@ import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import { terser } from 'rollup-plugin-terser'
+import scss from 'rollup-plugin-scss'
+import dartSass from 'sass'
 
 export default defineConfig({
 	plugins: [
@@ -10,9 +12,8 @@ export default defineConfig({
 		dts({
 			entryRoot: '.',
 			outputDir: [resolve(__dirname, './es')],
-			//指定使用的tsconfig.json为我们整个项目根目录下掉,如果不配置,你也可以在components下新建tsconfig.json
-			tsConfigFilePath: '../../tsconfig.json',
 		}),
+		scss({ include: /\.scss$/, sass: dartSass, output: './dist/index.css' }),
 	],
 	build: {
 		target: 'modules',

@@ -7,6 +7,10 @@
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true
 	},
-	"include": ["docs/vite.config.ts", "docs/plugins/md.ts"],
+	"include": [
+		"docs/vite.config.ts",
+		"docs/plugins/md.ts",
+		"packages/components/vite.config.ts"
+	],
 	"exclude": ["**/__tests__/**", "**/tests/**", "**/dist"]
 }
