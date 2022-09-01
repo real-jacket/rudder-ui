@@ -23,8 +23,9 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue'
 import Button from '../button/Button.vue'
-export default {
+export default defineComponent({
 	name: 'Dialog',
 	components: {
 		Button,
@@ -71,7 +72,7 @@ export default {
 			closeOnClikMask,
 		}
 	},
-}
+})
 </script>
 
 <style lang="scss">

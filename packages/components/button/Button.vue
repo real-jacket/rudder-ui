@@ -6,7 +6,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
 	name: 'Button',
 	props: {
 		theme: {
@@ -30,7 +32,7 @@ export default {
 			default: false,
 		},
 	},
-	setup(props, context) {
+	setup(props) {
 		const { theme, size, level, loading } = props
 		const classes = {
 			[`rudder-theme-${theme}`]: theme,
@@ -43,7 +45,7 @@ export default {
 			classes,
 		}
 	},
-}
+})
 </script>
 
 <style lang="scss">

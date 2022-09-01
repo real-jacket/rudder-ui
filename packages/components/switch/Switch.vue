@@ -9,8 +9,9 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
 	name: 'Switch',
 	props: {
 		value: Boolean,
@@ -23,7 +24,7 @@ export default {
 			toggle,
 		}
 	},
-}
+})
 </script>
 
 <style lang="scss">

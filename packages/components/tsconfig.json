@@ -1,7 +1,21 @@
 {
-	"exclude": ["dist", "es", "lib", "node_modules", "./vite.config.ts"],
+	"exclude": [
+		"dist",
+		"es",
+		"lib",
+		"node_modules",
+	],
+	"include": [
+		"**/*.vue",
+		"**/*.ts",
+		"*.ts"
+	],
 	"references": [
-		{ "path": "../../tsconfig.base.json" },
-		{ "path": "../../tsconfig.node.json" }
+		{
+			"path": "../../tsconfig.base.json"
+		},
+		{
+			"path": "../../tsconfig.node.json"
+		}
 	]
 }

@@ -1,7 +1,14 @@
 import { createApp, h } from 'vue'
 import Dialog from '../dialog/Dialog.vue'
 
-export const openDialog = (options) => {
+interface DialogOption {
+	title: string
+	content: any
+	cancel: () => void
+	ok: () => boolean
+}
+
+export const openDialog = (options: DialogOption) => {
 	const { title, content, cancel, ok } = options
 
 	const div = document.createElement('div')
@@ -35,7 +42,7 @@ export const openDialog = (options) => {
 	})
 
 	const close = () => {
-		app.unmount(div)
+		app.unmount()
 		div.remove()
 	}
 
