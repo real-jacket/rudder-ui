@@ -4,7 +4,6 @@
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
 import TabsDemo1 from './TabsDemos/Tabs1.demo.vue'
 export default {
 	name: 'TabsDemo',

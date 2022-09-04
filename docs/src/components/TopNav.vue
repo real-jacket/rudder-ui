@@ -31,7 +31,8 @@
 
 <script lang="ts">
 import { inject, Ref } from 'vue'
-export default {
+import { defineComponent } from 'vue'
+export default defineComponent({
 	name: 'TopNav',
 	props: {
 		toggleVisible: {
@@ -40,9 +41,9 @@ export default {
 		},
 	},
 	setup() {
-		const menueVisible = inject<Ref<Boolean>>('menueVisible')
+		const menueVisible = inject<Ref<Boolean>>('menueVisible')!
 		const toggleMenue = () => {
-			menueVisible.value = !menueVisible.value
+			menueVisible.value = menueVisible.value
 			document.body.style.overflow = menueVisible.value ? 'hidden' : 'auto'
 		}
 		return {
@@ -54,7 +55,7 @@ export default {
 			this.$router.push('/')
 		},
 	},
-}
+})
 </script>
 
 <style lang="scss" scoped>

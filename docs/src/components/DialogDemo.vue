@@ -9,7 +9,6 @@ import { Button } from 'rudder-ui'
 import DialogDemo1 from './DialogDemos/Dialog1.demo.vue'
 import DialogDemo2 from './DialogDemos/Dialog2.demo.vue'
 
-import { ref } from 'vue'
 export default {
 	name: 'DialogDemo',
 	components: {
