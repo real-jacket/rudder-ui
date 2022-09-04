@@ -17,7 +17,9 @@
 		"rootDir": ".",
 		"types": [],
 		"paths": {
-			"rudder-ui/*": ["packages/components/*"]
+			"rudder-ui/*": [
+				"packages/components/*"
+			]
 		}
 	}
 }
