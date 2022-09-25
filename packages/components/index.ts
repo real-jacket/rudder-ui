@@ -1,6 +1,24 @@
-export { default as Switch } from './switch/Switch.vue'
-export { default as Button } from './button/Button.vue'
-export { default as Tabs } from './tabs/Tabs.vue'
-export { default as TabItem } from './tabs/TabItem.vue'
-export { default as Dialog } from './dialog/Dialog.vue'
-export { openDialog } from './open-dialog/openDialog'
+import Switch from './switch/Switch.vue'
+import Button from './button/Button.vue'
+import Tabs from './tabs/Tabs.vue'
+import TabItem from './tabs/TabItem.vue'
+import Dialog from './dialog/Dialog.vue'
+import openDialog from './open-dialog/openDialog'
+import type { App, Plugin } from 'vue'
+
+export { Switch, Button, Tabs, TabItem, Dialog, openDialog }
+
+const components = [Switch, Button, Tabs, TabItem, Dialog, openDialog]
+
+const rudderPlugin = () => {
+	const install = (app: App, ...options: any[]) => {
+		components.forEach((c) => {
+			app.component(c.name, c)
+		})
+	}
+	return {
+		install,
+	}
+}
+
+export default rudderPlugin() as Plugin
