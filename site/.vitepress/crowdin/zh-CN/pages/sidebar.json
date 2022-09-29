@@ -1,25 +1,17 @@
 [
     {
-        "text": "Guide",
-        "link": "/guide/design",
+        "text": "指南",
+        "link": "/guide/intro",
         "activeMatch": "/guide/"
     },
     {
-        "text": "Component",
+        "text": "组件",
         "link": "/component/button",
         "activeMatch": "/component/"
     },
     {
-        "text": "Resource",
-        "link": "/resource/index",
+        "text": "资源",
+        "link": "/resource/xxx",
         "activeMatch": "/resource/"
-    },
-    {
-        "text": "Languages",
-        "items": [
-            {
-                "text": "简体中文"
-            }
-        ]
     }
 ]

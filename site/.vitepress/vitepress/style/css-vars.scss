@@ -1,0 +1,11 @@
+:root {
+	--border-color: #dcdfe6;
+	--border-radius: 4px;
+}
+
+html:not(.dark) {
+}
+
+html.dark {
+	--border-color: #4c4d4f;
+}

@@ -1,6 +1,8 @@
 import type { UserConfig } from 'vitepress'
 import head from './config/head'
 import nav from './config/nav'
+import { mdPlugin } from './config/plugin'
+import sidebars from './config/siderbars'
 
 export const config: UserConfig = {
 	title: 'RudderUI',
@@ -14,11 +16,17 @@ export const config: UserConfig = {
 		siteTitle: false,
 		docsDir: 'site',
 		nav,
+		sidebar: sidebars,
 		socialLinks: [
+			// { icon: 'languages', link: '/' },
 			{ icon: 'github', link: 'https://github.com/real-jacket/rudder-ui' },
 		],
 	},
 	locales: { '/zh-CN': { label: '简体中文', lang: 'zh-CN' } },
+
+	markdown: {
+		config: (md) => mdPlugin(md),
+	},
 }
 
 export default config

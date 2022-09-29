@@ -10,11 +10,11 @@ const lang = themeData.lang.value
 
 onMounted(() => {
 	if (route.path === '/') {
-		go(`/${lang}/`)
+		go(`/${lang}/index.html`)
 	}
 
-	const element = document.querySelector('.VPNavBarTitle > .title')
-	element!.setAttribute('href', '/zh-CN/')
+	const logTitle = document.querySelector('.VPNavBarTitle > .title')
+	logTitle?.setAttribute('href', `/${lang}/index.html`)
 })
 </script>
 

@@ -3,10 +3,14 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-declare module '@vue/runtime-core' {
-	export interface GlobalComponents {
-		VPApp: typeof import('./.vitepress/vitepress/components/vp-app.vue')['default']
-	}
-}
-
 export {}
+
+declare module '@vue/runtime-core' {
+  export interface GlobalComponents {
+    VpApp: typeof import('./.vitepress/vitepress/components/vp-app.vue')['default']
+    VPApp: typeof import('./.vitepress/vitepress/components/vp-app.vue')['default']
+    VpDemo: typeof import('./.vitepress/vitepress/components/vp-demo.vue')['default']
+    VpExample: typeof import('./.vitepress/vitepress/components/demo/vp-example.vue')['default']
+    VpSource: typeof import('./.vitepress/vitepress/components/demo/vp-source.vue')['default']
+  }
+}
