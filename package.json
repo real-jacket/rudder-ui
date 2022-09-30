@@ -7,6 +7,7 @@
 	],
 	"version": "0.0.1",
 	"scripts": {
+		"site:dev": "pnpm run -C site docs:dev",
 		"docs:dev": "pnpm run -C docs dev",
 		"docs:build": "pnpm run -C docs build",
 		"build:component": "pnpm run -C packages/components build"

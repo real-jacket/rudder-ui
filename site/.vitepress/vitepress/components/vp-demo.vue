@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch, nextTick } from 'vue'
-import { useToggle } from '@vueuse/core'
+import { useToggle, useClipboard, usePermission } from '@vueuse/core'
 import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source.vue'
-import { withBase } from 'vitepress'
 
 const props = defineProps<{
 	demos: object
@@ -12,6 +11,23 @@ const props = defineProps<{
 	rawSource: string
 	description?: string
 }>()
+
+const { copy, isSupported } = useClipboard({
+	source: decodeURIComponent(props.rawSource),
+	read: false,
+})
+
+const copyCode = async () => {
+	if (!isSupported) {
+		window.alert('复制失败，暂不支持～')
+	}
+	try {
+		await copy()
+		window.alert('复制成功')
+	} catch (error: any) {
+		window.alert(error.message)
+	}
+}
 
 const decodedDescription = computed(() =>
 	decodeURIComponent(props.description!)
@@ -52,9 +68,15 @@ watch(sourceVisible, async (v) => {
 
 			<div class="divider"></div>
 
-			<div class="op-btns" @click="toggleSourceVisible(!sourceVisible)">
-				<img v-show="sourceVisible" :src="withBase('/images/unexpand.svg')" />
-				<img v-show="!sourceVisible" :src="withBase('/images/expand.svg')" />
+			<div class="op-btns">
+				<span class="icon" @click="copyCode">
+					<i-ri-file-copy-line />
+				</span>
+
+				<span class="icon" @click="toggleSourceVisible(!sourceVisible)">
+					<i-rudder-doc-expand v-show="!sourceVisible" />
+					<i-rudder-doc-unexpand v-show="sourceVisible" />
+				</span>
 			</div>
 
 			<Transition name="slide" ref="codeContainer">
@@ -66,7 +88,10 @@ watch(sourceVisible, async (v) => {
 				class="example-float-control"
 				@click="toggleSourceVisible(false)"
 			>
-				<span>隐藏源代码</span>
+				<span class="icon" :style="{ marginRight: '8px' }">
+					<i-bxs-up-arrow />
+				</span>
+				<span class="hide-text">隐藏源代码</span>
 			</div>
 		</div>
 	</ClientOnly>
@@ -75,11 +100,19 @@ watch(sourceVisible, async (v) => {
 .example {
 	border: 1px solid var(--border-color);
 	border-radius: var(--border-radius);
-	overflow: hidden;
 
 	.divider {
 		height: 1px;
 		border-top: 1px solid var(--border-color);
+	}
+
+	.icon {
+		cursor: pointer;
+		margin: 0 0.5rem;
+		opacity: 0.6;
+		&:hover {
+			opacity: 1;
+		}
 	}
 
 	.op-btns {
@@ -88,7 +121,7 @@ watch(sourceVisible, async (v) => {
 		align-items: center;
 		padding: 0.5rem;
 		height: 2.5rem;
-		color: #00000073;
+		color: var(--text-color-lighter);
 
 		> img {
 			opacity: 0.55;
@@ -120,6 +153,17 @@ watch(sourceVisible, async (v) => {
 		bottom: 0;
 		z-index: 10;
 		background: var(--vp-c-bg);
+
+		.hide-text {
+			opacity: 0.6;
+		}
+
+		&:hover {
+			.hide-text,
+			.icon {
+				opacity: 1;
+			}
+		}
 	}
 }
 </style>

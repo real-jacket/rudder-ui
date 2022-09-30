@@ -1,3 +1,8 @@
+---
+title: 介绍
+lang: zh-CN
+---
+
 # 介绍
 
 Rudder UI 是一款基于 Vue 3 和 TypeScript、使用 vite 与 rollup 开发构建的 UI 组件库。

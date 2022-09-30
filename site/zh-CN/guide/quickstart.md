@@ -1,3 +1,8 @@
+---
+title: 快速开始
+lang: zh-CN
+---
+
 # 开始使用
 
 请先[安装](#/doc/install)本组件库。
