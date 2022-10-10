@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"composite": true,
 		"outDir": "dist",
 		"target": "es2018",
 		"module": "esnext",

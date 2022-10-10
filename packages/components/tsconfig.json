@@ -1,4 +1,12 @@
 {
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"composite": true,
+		"types": [
+			"unplugin-vue-macros/macros-global",
+			"../../shims-vue",
+		],
+	},
 	"exclude": [
 		"dist",
 		"es",
@@ -8,14 +16,6 @@
 	"include": [
 		"**/*.vue",
 		"**/*.ts",
-		"*.ts"
+		"*.ts",
 	],
-	"references": [
-		{
-			"path": "../../tsconfig.base.json"
-		},
-		{
-			"path": "../../tsconfig.node.json"
-		}
-	]
 }
