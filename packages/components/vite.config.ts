@@ -5,10 +5,15 @@ import dts from 'vite-plugin-dts'
 import { terser } from 'rollup-plugin-terser'
 import scss from 'rollup-plugin-scss'
 import dartSass from 'sass'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
 	plugins: [
-		vue(),
+		VueMacros({
+			plugins: {
+				vue: vue(),
+			},
+		}),
 		dts({
 			entryRoot: '.',
 			outputDir: [resolve(__dirname, './es')],
@@ -27,7 +32,7 @@ export default defineConfig({
 		},
 		rollupOptions: {
 			// 确保外部化处理那些你不想打包进库的依赖
-			external: ['vue'],
+			external: ['vue', '@rudder-ui/utils'],
 			output: [
 				{
 					format: 'es',
