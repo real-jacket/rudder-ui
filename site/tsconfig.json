@@ -1,7 +1,9 @@
 {
+    // "extends": "../tsconfig.base.json",
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
+        "baseUrl": ".",
         "moduleResolution": "Node",
         "resolveJsonModule": true,
         "allowSyntheticDefaultImports": true,
@@ -31,5 +33,10 @@
     ],
     "exclude": [
         "node_modules"
-    ]
+    ],
+    // "references": [
+    //     {
+    //         "path": "../packages/components/tsconfig.json"
+    //     }
+    // ]
 }

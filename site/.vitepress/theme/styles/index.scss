@@ -1,0 +1,26 @@
+.common-layout {
+	.rudder-header,
+	.rudder-main,
+	.rudder-aside,
+	.rudder-footer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.rudder-header {
+		height: 60px;
+		background-color: #95d475;
+	}
+	.rudder-main {
+		height: 150px;
+		background-color: #d1edc4;
+	}
+	.rudder-aside {
+		width: 120px;
+		background-color: #b3e19d;
+	}
+	.rudder-footer {
+		height: 60px;
+		background-color: #529b2e;
+	}
+}

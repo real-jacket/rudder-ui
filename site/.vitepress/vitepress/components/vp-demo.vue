@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch, nextTick } from 'vue'
-import { useToggle, useClipboard, usePermission } from '@vueuse/core'
+import { useToggle, useClipboard } from '@vueuse/core'
 import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source.vue'
 

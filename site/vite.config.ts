@@ -1,11 +1,12 @@
 import { defineConfig, loadEnv } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import VueJsx from '@vitejs/plugin-vue-jsx'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import mkcert from 'vite-plugin-mkcert'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 import path from 'path'
 
@@ -30,12 +31,21 @@ export default defineConfig(({ mode }) => {
 		server: {
 			host: true,
 			https: true,
+			fs: {
+				allow: [path.resolve(__dirname, '..')],
+			},
 		},
 		resolve: {
 			alias,
 		},
 		plugins: [
-			vueJsx(),
+			VueMacros({
+				setupComponent: false,
+				setupSFC: false,
+				plugins: {
+					vueJsx: VueJsx(),
+				},
+			}),
 			Components({
 				dirs: ['.vitepress/vitepress/components'],
 				allowOverrides: true,

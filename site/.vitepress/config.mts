@@ -17,6 +17,7 @@ export const config: UserConfig = {
 		docsDir: 'site',
 		nav,
 		sidebar: sidebars,
+		outlineTitle: '本页目录',
 		socialLinks: [
 			// { icon: 'languages', link: '/' },
 			{ icon: 'github', link: 'https://github.com/real-jacket/rudder-ui' },

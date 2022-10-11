@@ -1,6 +1,6 @@
 import RudderUi from 'rudder-ui'
 
-import './styles/index.css'
+import './styles/index.scss'
 
 import VPApp from '../vitepress'
 import VPDemo from '../vitepress/components/vp-demo.vue'
