@@ -1,11 +1,11 @@
 import RudderUi from 'rudder-ui'
 
-import './styles/index.scss'
-
 import VPApp from '../vitepress'
 import VPDemo from '../vitepress/components/vp-demo.vue'
 
 import type { Theme } from 'vitepress'
+
+import './styles/index.scss'
 
 const themeConfig: Theme = {
 	// NotFound,

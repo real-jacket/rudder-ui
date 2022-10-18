@@ -7,6 +7,10 @@ lang: zh-CN
 
 ## 常见页面布局
 
+<style lang="scss">
+@use '../../examples/container/common-layout.scss';
+</style>
+
 :::demo
 
 container/layout-hm
