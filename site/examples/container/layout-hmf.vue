@@ -1,14 +1,9 @@
 <template>
 	<div class="common-layout">
-		<Container>
-			<Header>header</Header>
-			<Main>main</Main>
-			<Footer>footer</Footer>
-		</Container>
+		<r-container>
+			<r-header>header</r-header>
+			<r-main>main</r-main>
+			<r-footer>footer</r-footer>
+		</r-container>
 	</div>
 </template>
-<script lang="ts" setup>
-import { Container } from 'rudder-ui'
-
-const { Main, Header, Footer } = Container
-</script>

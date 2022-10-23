@@ -6,6 +6,6 @@
 
 <script lang="ts">
 export default {
-	name: 'TabItem',
+	name: 'RTabItem',
 }
 </script>

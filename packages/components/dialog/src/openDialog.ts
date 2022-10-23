@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue'
-import Dialog from '../dialog/Dialog.vue'
+import Dialog from './Dialog.vue'
 
 export interface DialogOption {
 	title: string
@@ -8,7 +8,7 @@ export interface DialogOption {
 	ok: () => boolean
 }
 
-const openDialog = (options: DialogOption) => {
+export const openDialog = (options: DialogOption) => {
 	const { title, content, cancel, ok } = options
 
 	const div = document.createElement('div')
@@ -48,5 +48,3 @@ const openDialog = (options: DialogOption) => {
 
 	app.mount(div)
 }
-
-export default openDialog

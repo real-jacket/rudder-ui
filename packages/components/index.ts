@@ -1,21 +1,23 @@
-import Switch from './switch/Switch.vue'
-import Button from './button/Button.vue'
-import Tabs from './tabs/Tabs.vue'
-import TabItem from './tabs/TabItem.vue'
-import Dialog from './dialog/Dialog.vue'
-import openDialog from './open-dialog/openDialog'
-import Container from './container'
-
 import type { App, Plugin } from 'vue'
 
-export { Switch, Button, Tabs, TabItem, Dialog, openDialog, Container }
+import RSwitch from './switch'
+import RButton from './button'
+import RTabs from './tabs'
+import RDialog from './dialog'
+import RContainer from './container'
 
-const components = [Switch, Button, Tabs, TabItem, Dialog, openDialog]
+export * from './switch'
+export * from './button'
+export * from './tabs'
+export * from './dialog'
+export * from './container'
+
+const components = [RSwitch, RButton, RTabs, RDialog, RContainer] as Plugin[]
 
 const rudderPlugin = () => {
 	const install = (app: App, ...options: any[]) => {
 		components.forEach((c) => {
-			app.component(c.name!, c)
+			app.use(c)
 		})
 	}
 	return {

@@ -8,7 +8,7 @@
 import { nameSpaceClass } from '@rudder-ui/utils'
 
 defineOptions({
-	name: 'Main',
+	name: 'RMain',
 })
 </script>
 <style lang="scss">

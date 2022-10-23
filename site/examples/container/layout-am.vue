@@ -1,13 +1,8 @@
 <template>
 	<div class="common-layout">
-		<Container>
-			<Aside>aside</Aside>
-			<Main>main</Main>
-		</Container>
+		<r-container>
+			<r-aside>aside</r-aside>
+			<r-main>main</r-main>
+		</r-container>
 	</div>
 </template>
-<script lang="ts" setup>
-import { Container } from 'rudder-ui'
-
-const { Main, Aside } = Container
-</script>

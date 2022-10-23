@@ -24,9 +24,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Button from '../button/Button.vue'
+import Button from '../../button/src/Button.vue'
 export default defineComponent({
-	name: 'Dialog',
+	name: 'RDialog',
 	components: {
 		Button,
 	},

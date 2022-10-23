@@ -1,6 +1,6 @@
 <template>
-	<Button level="main" @click="toggle">open Dialog</Button>
-	<Dialog
+	<r-button level="main" @click="toggle">open Dialog</r-button>
+	<r-dialog
 		title="标题"
 		v-model:visible="visible"
 		:closeOnClickMask="false"
@@ -12,7 +12,7 @@
 		<p>第一行内容。。。。</p>
 		<p>第二行内容。。。。</p>
 		<p>第三行内容。。。。</p>
-	</Dialog>
+	</r-dialog>
 </template>
 
 <script lang="ts">

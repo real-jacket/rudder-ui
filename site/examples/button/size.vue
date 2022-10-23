@@ -1,5 +1,5 @@
 <template>
-	<Button size="big">你好</Button>
-	<Button>你好</Button>
-	<Button size="small">你好</Button>
+	<r-button size="big">你好</r-button>
+	<r-button>你好</r-button>
+	<r-button size="small">你好</r-button>
 </template>

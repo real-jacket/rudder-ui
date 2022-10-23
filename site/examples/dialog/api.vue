@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { openDialog } from 'rudder-ui'
+
 export default {
 	setup() {
 		const showDialog = () => {

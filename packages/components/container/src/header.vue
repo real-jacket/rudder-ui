@@ -10,7 +10,7 @@ import type { CSSProperties } from 'vue'
 import { nameSpaceClass } from '@rudder-ui/utils'
 
 defineOptions({
-	name: 'Header',
+	name: 'RHeader',
 })
 
 const props = defineProps<{

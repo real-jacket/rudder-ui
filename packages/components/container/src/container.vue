@@ -15,7 +15,7 @@ const nameContainer = (...names: string[]): string => {
 }
 
 defineOptions({
-	name: 'Container',
+	name: 'RContainer',
 })
 
 const props = defineProps<{
@@ -36,7 +36,7 @@ const isVertical = computed(() => {
 
 		return vNodes.some((vNode) => {
 			const tag = (vNode.type as Component).name
-			return tag === 'Header' || tag === 'Footer'
+			return tag === 'RHeader' || tag === 'RFooter'
 		})
 	}
 })

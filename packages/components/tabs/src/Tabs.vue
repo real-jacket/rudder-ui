@@ -29,7 +29,7 @@
 import { computed, onMounted, ref, watchEffect, defineComponent } from 'vue'
 import TabItem from './TabItem.vue'
 export default defineComponent({
-	name: 'Tabs',
+	name: 'RTabs',
 	props: {
 		selected: String,
 	},
