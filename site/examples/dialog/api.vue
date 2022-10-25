@@ -1,5 +1,5 @@
 <template>
-	<Button level="main" @click="showDialog">open Dialog</Button>
+	<r-button level="main" @click="showDialog">open Dialog</r-button>
 </template>
 
 <script lang="ts">
