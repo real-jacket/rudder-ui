@@ -18,6 +18,7 @@
 			"rudder-ui/*": [
 				"packages/components/*"
 			]
-		}
+		},
+		"jsx": "preserve",
 	}
 }

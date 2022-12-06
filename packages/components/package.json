@@ -38,6 +38,7 @@
 	"sideEffects": false,
 	"devDependencies": {
 		"@vitejs/plugin-vue": "^3.0.3",
+		"@vitejs/plugin-vue-jsx": "^2.0.1",
 		"rollup-plugin-scss": "^3.0.0",
 		"rollup-plugin-terser": "^7.0.2",
 		"sass": "^1.54.6",

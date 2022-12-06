@@ -1,15 +1,16 @@
 import { createApp, h } from 'vue'
-import Dialog from './Dialog.vue'
+import Dialog from './DialogWrap'
 
 export interface DialogOption {
 	title: string
 	content: any
 	cancel: () => void
 	ok: () => boolean
+	afterClose: () => boolean
 }
 
 export const openDialog = (options: DialogOption) => {
-	const { title, content, cancel, ok } = options
+	const { title, content, cancel, ok, afterClose } = options
 
 	const div = document.createElement('div')
 	document.body.appendChild(div)
@@ -20,17 +21,15 @@ export const openDialog = (options: DialogOption) => {
 				Dialog,
 				{
 					visible: true,
-					'onUpdate:visible': () => {
-						close()
-					},
 					cancel: () => {
 						cancel?.()
-						close()
 					},
 					ok: () => {
-						if (ok?.() === true) {
-							close()
-						}
+						ok?.()
+					},
+					afterClose: () => {
+						close()
+						afterClose?.()
 					},
 				},
 				{

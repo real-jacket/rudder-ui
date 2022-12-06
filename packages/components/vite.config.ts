@@ -4,16 +4,19 @@ import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import { terser } from 'rollup-plugin-terser'
 import scss from 'rollup-plugin-scss'
-import dartSass from 'sass'
+import * as dartSass from 'sass'
 import VueMacros from 'unplugin-vue-macros/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
 	plugins: [
 		VueMacros({
 			plugins: {
 				vue: vue(),
+				vueJsx: vueJsx(),
 			},
 		}),
+
 		dts({
 			entryRoot: '.',
 			outputDir: [resolve(__dirname, './es')],

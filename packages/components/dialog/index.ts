@@ -1,5 +1,5 @@
 import { withInstall } from '@rudder-ui/utils'
-import Dialog from './src/Dialog.vue'
+import Dialog from './src/DialogWrap'
 
 export const RDialog = withInstall(Dialog)
 

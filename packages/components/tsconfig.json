@@ -1,20 +1,32 @@
 {
 	"compilerOptions": {
-		"composite": true,
-		"types": [
-			"unplugin-vue-macros/macros-global",
-			"../../shims-vue",
+		"baseUrl": "./",
+		"lib": [
+			"ESNext",
+			"DOM",
+			"DOM.Iterable"
 		],
+		"strictNullChecks": false,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"jsx": "preserve",
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"noImplicitAny": false,
+		"target": "esnext",
+		"module": "esnext",
+		"skipLibCheck": true,
+		"allowJs": true,
+		"importsNotUsedAsValues": "preserve"
 	},
 	"exclude": [
-		"dist",
-		"es",
-		"lib",
 		"node_modules",
-	],
-	"include": [
-		"**/*.vue",
-		"**/*.ts",
-		"*.ts",
-	],
+		"lib",
+		"es",
+		"dist",
+		"v2-doc",
+		"scripts",
+		"**/__tests__/**/*"
+	]
 }

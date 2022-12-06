@@ -17,7 +17,7 @@ dialog/basic
 
 ## api调用
 
-:::demo 通过 api 的方式吊桶调用
+:::demo 通过 api 的方式调用
 
 dialog/api
 
