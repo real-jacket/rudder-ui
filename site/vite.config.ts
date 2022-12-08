@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, Alias } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -10,18 +10,14 @@ import VueMacros from 'unplugin-vue-macros/vite'
 
 import path from 'path'
 
-const alias = [
+const alias: Alias[] = [
 	{
-		find: /^rudder-ui(\/(es|lib))?$/,
+		find: /^rudder-ui$/,
 		replacement: path.resolve('..', 'packages/components/index.ts'),
 	},
 	{
-		find: /^rudder-ui\/(es|lib)\/(.*)$/,
-		replacement: `${path.resolve('..', 'packages/components')}/$2`,
-	},
-	{
-		find: /^rudder-ui\/(.*)$/,
-		replacement: `${path.resolve('..', 'packages/components')}/$2`,
+		find: /^rudder-ui(\/(es|lib))?\/(.*)$/,
+		replacement: `${path.resolve('..', 'packages/components')}/$3`,
 	},
 ]
 

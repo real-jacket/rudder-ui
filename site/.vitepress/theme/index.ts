@@ -1,4 +1,6 @@
-import RudderUi from 'rudder-ui'
+import RudderUi, { directive } from 'rudder-ui'
+
+import 'rudder-ui/es/directive/index.scss'
 
 import VPApp from '../vitepress'
 import VPDemo from '../vitepress/components/vp-demo.vue'
@@ -12,7 +14,9 @@ const themeConfig: Theme = {
 	Layout: VPApp,
 	enhanceApp: ({ app, router }) => {
 		app.use(RudderUi)
-		// app.use(ElementPlus)
+		Object.entries(directive).map(([k, d]) => {
+			app.directive(k, d)
+		})
 		// globals.forEach(([name, Comp]) => {
 		// 	app.component(name, Comp)
 		// })
