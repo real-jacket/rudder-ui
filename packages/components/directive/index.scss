@@ -18,23 +18,24 @@ $ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
 
 .wave-container {
 	position: relative;
-	.wave-dom {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		display: block;
-		border-radius: inherit;
-		box-shadow: 0 0 0 0 $primary-color;
-		box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
-		opacity: 0.2;
-		animation-fill-mode: forwards;
-		content: '';
-		pointer-events: none;
+}
 
-		&.animate {
-			animation: fadeEffect 2s $ease-out-circ, waveEffect 0.4s $ease-out-circ;
-		}
+.wave-dom {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	border-radius: inherit;
+	box-shadow: 0 0 0 0 $primary-color;
+	box-shadow: 0 0 0 0 var(--antd-wave-shadow-color);
+	opacity: 0.2;
+	animation-fill-mode: forwards;
+	content: '';
+	pointer-events: none;
+
+	&.animate {
+		animation: fadeEffect 2s $ease-out-circ, waveEffect 0.4s $ease-out-circ;
 	}
 }
