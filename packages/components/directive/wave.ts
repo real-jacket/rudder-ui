@@ -33,6 +33,7 @@ const wave: Directive = {
 		const { dom, click, animationsEnd } = binding
 		el.removeEventListener('click', click)
 		dom.removeEventListener('animationend', animationsEnd)
+		el.removeChild(dom)
 	},
 }
 
