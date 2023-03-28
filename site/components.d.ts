@@ -7,10 +7,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Home: typeof import('./.vitepress/vitepress/components/home.vue')['default']
     IBxsUpArrow: typeof import('~icons/bxs/up-arrow')['default']
     IRiFileCopyLine: typeof import('~icons/ri/file-copy-line')['default']
+    IRudderDocApp: typeof import('~icons/rudder-doc/app')['default']
     IRudderDocExpand: typeof import('~icons/rudder-doc/expand')['default']
+    IRudderDocLight: typeof import('~icons/rudder-doc/light')['default']
+    IRudderDocRightArrow: typeof import('~icons/rudder-doc/right-arrow')['default']
+    IRudderDocTeam: typeof import('~icons/rudder-doc/team')['default']
+    IRudderDocTypescript: typeof import('~icons/rudder-doc/typescript')['default']
     IRudderDocUnexpand: typeof import('~icons/rudder-doc/unexpand')['default']
+    IRudderDocVue: typeof import('~icons/rudder-doc/vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     VpApp: typeof import('./.vitepress/vitepress/components/vp-app.vue')['default']

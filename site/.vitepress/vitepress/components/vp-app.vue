@@ -10,11 +10,11 @@ const lang = themeData.lang.value
 
 onMounted(() => {
 	if (route.path === '/') {
-		go(`/${lang}/index.html`)
+		go(`/${lang}/`)
 	}
 
 	const logTitle = document.querySelector('.VPNavBarTitle > .title')
-	logTitle?.setAttribute('href', `/${lang}/index.html`)
+	logTitle?.setAttribute('href', `/${lang}/`)
 })
 </script>
 

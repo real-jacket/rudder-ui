@@ -5,4 +5,4 @@ lang: zh-CN
 layout: home
 ---
 
-测试文档
+<Home />

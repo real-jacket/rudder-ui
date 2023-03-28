@@ -24,7 +24,6 @@ export const config: UserConfig = {
 		],
 	},
 	locales: { '/zh-CN': { label: '简体中文', lang: 'zh-CN' } },
-
 	markdown: {
 		config: (md) => mdPlugin(md),
 	},

@@ -5,7 +5,7 @@ const head: HeadConfig[] = [
 		'link',
 		{
 			rel: 'icon',
-			href: '/images/vite.svg',
+			href: '/images/rudder.svg',
 			type: 'image/svg+xm',
 		},
 	],
