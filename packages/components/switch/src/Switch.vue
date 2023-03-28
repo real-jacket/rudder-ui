@@ -1,7 +1,7 @@
 <template>
 	<button
 		class="rudder-switch"
-		:class="{ 'rudder-checked': value }"
+		:class="{ checked: value, square: square }"
 		@click="toggle"
 	>
 		<span></span>
@@ -15,6 +15,7 @@ export default defineComponent({
 	name: 'RSwitch',
 	props: {
 		value: Boolean,
+		square: Boolean,
 	},
 	setup(props, context) {
 		const toggle = () => {
@@ -60,7 +61,15 @@ $h2: $h - 4px;
 		transition: all 250ms ease-in-out;
 	}
 
-	&.rudder-checked {
+	&.square {
+		border-radius: 4px;
+
+		> span {
+			border-radius: 4px;
+		}
+	}
+
+	&.checked {
 		background: #1890ff;
 
 		&:active {

@@ -14,7 +14,9 @@ const datasetName = 'directive_wave'
 const wave: Directive = {
 	mounted(el: HTMLDivElement) {
 		const waveDom = document.createElement('div')
+		// 通过时间戳来生成唯一性 id
 		const key = new Date().valueOf().toString()
+		// 利用 dataset 来储存 key
 		el.dataset[datasetName] = key
 		directiveContext[key] = {
 			dom: waveDom,
@@ -30,7 +32,6 @@ const wave: Directive = {
 		function animationsEnd() {
 			waveDom.classList.remove('animate')
 		}
-
 		directiveContext[key].click = waveClick
 		directiveContext[key].animationsEnd = animationsEnd
 
@@ -38,11 +39,12 @@ const wave: Directive = {
 		waveDom.addEventListener('animationend', animationsEnd)
 	},
 	unmounted(el: HTMLDivElement) {
-		const { dom, click, animationsEnd } =
-			directiveContext[el.dataset[datasetName]]
+		const key = el.dataset[datasetName]
+		const { dom, click, animationsEnd } = directiveContext[key]
 		el.removeEventListener('click', click)
 		dom.removeEventListener('animationend', animationsEnd)
 		el.removeChild(dom)
+		directiveContext[key] = null
 	},
 }
 
