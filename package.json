@@ -9,6 +9,7 @@
 	"scripts": {
 		"site:dev": "pnpm run -C site docs:dev",
 		"site:build": "pnpm run -C site docs:build",
+		"site:preview": "pnpm run -C site docs:preview",
 		"docs:dev": "pnpm run -C docs dev",
 		"docs:build": "pnpm run -C docs build",
 		"build:component": "pnpm run -C packages/components build"

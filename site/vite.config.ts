@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv, Alias } from 'vite'
+import { defineConfig, Alias } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import { MarkdownTransform } from './.vitepress/plugins/markdown-transform'
 import VueJsx from '@vitejs/plugin-vue-jsx'
@@ -7,22 +7,25 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
 import mkcert from 'vite-plugin-mkcert'
 import VueMacros from 'unplugin-vue-macros/vite'
-
 import path from 'path'
 
-const alias: Alias[] = [
-	{
-		find: /^rudder-ui$/,
-		replacement: path.resolve('..', 'packages/components/index.ts'),
-	},
-	{
-		find: /^rudder-ui(\/(es|lib))?\/(.*)$/,
-		replacement: `${path.resolve('..', 'packages/components')}/$3`,
-	},
-]
+const alias: Alias[] = []
 
-export default defineConfig(({ mode }) => {
-	// const env = loadEnv(mode, process.cwd(), '')
+if (process.env.NODE_ENV !== 'production') {
+	alias.push(
+		{
+			find: /^rudder-ui$/,
+			replacement: path.resolve('..', 'packages/components/index.ts'),
+		},
+		{
+			find: /^rudder-ui(\/(es|lib))?\/(.*)$/,
+			replacement: `${path.resolve('..', 'packages/components')}/$3`,
+		}
+	)
+}
+
+//@ts-ignore
+export default defineConfig(() => {
 	return {
 		server: {
 			host: true,
