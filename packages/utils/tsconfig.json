@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "declaration": true, // 生成类型声明文件
+        "declarationDir": "es",
+        "outDir": "es", // 编译输出目录
+        "target": "es6", // 编译目标 ECMAScript 版本
+        "module": "es6", // 模块格式为 ES6
+        "moduleResolution": "node",
+        "lib": [
+            "esnext",
+            "dom"
+        ] // 编译所需的类型声明文件
+    },
+    "include": [
+        "src",
+    ],
+}
