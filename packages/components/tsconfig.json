@@ -18,7 +18,9 @@
 		"module": "esnext",
 		"skipLibCheck": true,
 		"allowJs": true,
-		"importsNotUsedAsValues": "preserve"
+		"types": [
+			"unplugin-vue-macros/macros-global"
+		]
 	},
 	"exclude": [
 		"node_modules",

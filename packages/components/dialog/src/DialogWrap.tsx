@@ -16,9 +16,10 @@ const getClickPosition = (e: MouseEvent) => {
 	}, 100)
 }
 
-// 只有点击事件支持从鼠标位置动画展开
-
-document.documentElement.addEventListener('click', getClickPosition, true)
+// 只有点击事件支持从鼠标位置动画展开,兼容一下服务端渲染
+if (typeof document !== 'undefined') {
+	document.documentElement.addEventListener('click', getClickPosition, true)
+}
 
 const DialogWrap = defineComponent({
 	name: 'RDialog',

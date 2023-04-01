@@ -16,7 +16,6 @@ export default defineConfig({
 				vueJsx: vueJsx(),
 			},
 		}),
-
 		dts({
 			entryRoot: '.',
 			outputDir: [resolve(__dirname, './es')],
@@ -43,6 +42,7 @@ export default defineConfig({
 					entryFileNames: '[name].js',
 					//让打包目录和我们目录对应
 					preserveModules: true,
+					sourcemap: true,
 					//配置打包根目录
 					dir: resolve(__dirname, './es'),
 				},
@@ -52,6 +52,7 @@ export default defineConfig({
 					entryFileNames: '[name].js',
 					//让打包目录和我们目录对应
 					preserveModules: true,
+					sourcemap: true,
 					//配置打包根目录
 					dir: resolve(__dirname, './lib'),
 				},

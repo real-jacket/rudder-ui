@@ -24,17 +24,14 @@ const wave: Directive = {
 		el.classList.add('wave-container')
 		el.appendChild(waveDom)
 		waveDom.classList.add('wave-dom')
-
 		function waveClick() {
 			waveDom.classList.add('animate')
 		}
-
 		function animationsEnd() {
 			waveDom.classList.remove('animate')
 		}
 		directiveContext[key].click = waveClick
 		directiveContext[key].animationsEnd = animationsEnd
-
 		el.addEventListener('click', waveClick)
 		waveDom.addEventListener('animationend', animationsEnd)
 	},
