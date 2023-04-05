@@ -49,3 +49,8 @@ export default {
 }
 </script>
 ```
+
+# 计划
+
+基于 vue3 + vite + vitepress + pnpm + monorepo 的方案正在开发中，代码分支 ele-dev
+ 
