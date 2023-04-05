@@ -8,6 +8,7 @@ export const config: UserConfig = {
 	title: 'RudderUI',
 	description: 'a Vue 3  based component library',
 	lastUpdated: true,
+	base: '/rudder-ui/',
 	head,
 	appearance: true,
 	lang: 'zh-CN',
