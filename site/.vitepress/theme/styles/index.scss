@@ -1,0 +1,75 @@
+.Layout {
+	.VPNav {
+		.VPNavBar {
+			.VPNavBarTitle {
+				margin-right: 0;
+				border-bottom: none;
+				background-color: var(--vt-c-bg);
+
+				.VPImage.logo {
+					width: 30px;
+					height: 30px;
+					margin-left: 10px;
+				}
+			}
+		}
+	}
+
+	.VPSidebar {
+		background-color: var(--vt-c-bg);
+
+		overflow: hidden;
+
+		.nav {
+			height: 100%;
+			overflow-x: hidden;
+			overflow-y: auto;
+			margin-right: -48px;
+		}
+
+		@media (min-width: 960px) {
+			top: var(--vp-nav-height-desktop);
+			padding-top: 0px;
+		}
+		top: var(--vp-nav-height-mobile);
+		padding-top: 0px;
+		padding-bottom: 15px;
+
+		@media (min-width: 960px) {
+			.group + .group {
+				margin-top: 14px;
+			}
+		}
+		.group + .group {
+			margin-top: 14px;
+		}
+
+		.group {
+			border-top: none;
+			.VPSidebarGroup {
+				.title-text {
+					padding: 0;
+					font-size: 1rem;
+					font-weight: 700;
+					margin-bottom: 8px;
+					line-height: 24px;
+				}
+			}
+
+			.VPLink.link {
+				padding: 10px 16px;
+				margin: 0;
+				line-height: 1.5;
+				font-size: 0.9rem;
+				border-radius: 8px;
+				&:hover {
+					color: #1e9072;
+				}
+				&.active {
+					color: #1e9072;
+					background-color: rgba(242, 243, 245);
+				}
+			}
+		}
+	}
+}

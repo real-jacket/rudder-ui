@@ -1,0 +1,9 @@
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+.vp-doc [class*='language-'] code {
+	color: var(--prism-foreground);
+}

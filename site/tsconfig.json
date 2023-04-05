@@ -1,0 +1,42 @@
+{
+    // "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "baseUrl": ".",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "lib": [
+            "WebWorker",
+            "DOM"
+        ],
+        "paths": {
+            "rudder-ui": [
+                "../packages/components"
+            ],
+            "~/*": [
+                "./.vitepress/vitepress/*"
+            ]
+        },
+        "jsx": "preserve"
+    },
+    "include": [
+        "**/*",
+        ".vitepress/**/*",
+        "../shims-vue.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    // "references": [
+    //     {
+    //         "path": "../packages/components/tsconfig.json"
+    //     }
+    // ]
+}

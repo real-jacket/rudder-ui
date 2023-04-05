@@ -1,0 +1,42 @@
+{
+    "basic": {
+        "text": "Basic 基础组件",
+        "items": [
+            {
+                "link": "/button",
+                "text": "Button 按钮"
+            },
+            {
+                "link": "/container",
+                "text": "Container 布局容器"
+            }
+        ]
+    },
+    "form": {
+        "text": "Form 表单组件",
+        "items": [
+            {
+                "link": "/switch",
+                "text": "Switch 开关"
+            }
+        ]
+    },
+    "navigation": {
+        "text": "Navigation 导航",
+        "items": [
+            {
+                "link": "/tabs",
+                "text": "Tabs 标签页"
+            }
+        ]
+    },
+    "feedback": {
+        "text": "Feedback 反馈组件",
+        "items": [
+            {
+                "link": "/dialog",
+                "text": "Dialog 对话框"
+            }
+        ]
+    }
+}

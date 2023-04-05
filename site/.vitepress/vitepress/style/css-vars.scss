@@ -1,0 +1,13 @@
+:root {
+	--border-color: #dcdfe6;
+	--border-radius: 4px;
+}
+
+html:not(.dark) {
+	--text-color-lighter: '#909399';
+}
+
+html.dark {
+	--border-color: #4c4d4f;
+	--text-color-lighter: '#A3A6AD';
+}
