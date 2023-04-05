@@ -12,7 +12,7 @@ const base = themeData.site.value.base
 const homeUrl = `${base}${lang}/`
 
 onMounted(() => {
-	if (route.path === '/') {
+	if (route.path === base) {
 		go(homeUrl)
 	}
 
