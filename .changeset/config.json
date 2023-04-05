@@ -8,6 +8,6 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@rudder-ui/doc"
+    "@rudder-ui/docs"
   ]
 }

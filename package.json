@@ -8,15 +8,18 @@
 	"scripts": {
 		"dev": "turbo run dev",
 		"build": "turbo run build",
+		"changeset": "changeset",
+		"release": "turbo run build --filter=docs^... && changeset publish",
 		"site:dev": "pnpm run -C site dev",
-		"site:build": "pnpm run -C site docs:build",
-		"site:preview": "pnpm run -C site docs:preview",
+		"site:build": "pnpm run -C site build",
+		"site:preview": "pnpm run -C site preview",
 		"component:build": "pnpm run -C packages/components build",
 		"clear": "pnpm -w -r exec rm -rf node_modules"
 	},
 	"devDependencies": {
 		"@types/node": "^18.7.13",
-		"esbuild": "^0.15.5",
+		"changeset": "^0.2.6",
+		"esbuild": "^0.15.8",
 		"turbo": "^1.8.8",
 		"vue": "^3.2.37"
 	}
