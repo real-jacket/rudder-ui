@@ -26,7 +26,7 @@ importers:
   packages/components:
     dependencies:
       '@rudder-ui/utils':
-        specifier: workspace:^0.0.0
+        specifier: workspace:^0.1.0
         version: link:../utils
     devDependencies:
       '@vitejs/plugin-vue':
@@ -96,7 +96,7 @@ importers:
         specifier: ^1.29.0
         version: 1.29.0
       rudder-ui:
-        specifier: workspace:^0.0.5
+        specifier: workspace:^0.1.0
         version: link:../packages/components
       vue:
         specifier: ^3.2.37

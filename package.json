@@ -10,6 +10,7 @@
 		"build": "turbo run build",
 		"changeset": "changeset",
 		"release": "turbo run build --filter=docs^... && changeset publish",
+		"publish": "changeset publish",
 		"site:dev": "pnpm run -C site dev",
 		"site:build": "pnpm run -C site build",
 		"site:preview": "pnpm run -C site preview",

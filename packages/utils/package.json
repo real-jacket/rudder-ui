@@ -9,6 +9,9 @@
     "lib",
     "es"
   ],
+  "maintainers": [
+    "realjacket"
+  ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",

@@ -11,6 +11,9 @@
 		"es",
 		"lib"
 	],
+	"maintainers": [
+		"realjacket"
+	],
 	"exports": {
 		".": {
 			"require": "./lib/index.js",
