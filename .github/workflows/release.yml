@@ -6,12 +6,9 @@ on:
       - master
 
 jobs:
-  release:
-    name: Release
+  setup:
+    name: Environment
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -30,6 +27,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+  release:
+    needs: setup
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -40,6 +42,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+  docsSite:
+    needs:
+      - setup
+      - release
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Docs Build
         run: pnpm run site:build
       - uses: actions/configure-pages@v2
