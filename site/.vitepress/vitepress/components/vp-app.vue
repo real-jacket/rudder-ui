@@ -7,14 +7,17 @@ const { Layout } = DefaultTheme
 const { route, go } = useRouter()
 const themeData = useData()
 const lang = themeData.lang.value
+const base = themeData.site.value.base
+
+const homeUrl = `${base}${lang}/`
 
 onMounted(() => {
 	if (route.path === '/') {
-		go(`/${lang}/`)
+		go(homeUrl)
 	}
 
 	const logTitle = document.querySelector('.VPNavBarTitle > .title')
-	logTitle?.setAttribute('href', `/${lang}/`)
+	logTitle?.setAttribute('href', homeUrl)
 })
 </script>
 
