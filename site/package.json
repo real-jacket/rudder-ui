@@ -1,12 +1,13 @@
 {
-	"name": "site",
+	"name": "@rudder-ui/docs",
 	"version": "1.0.0",
+	"private": true,
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"docs:dev": "vitepress dev",
-		"docs:build": "vitepress build",
-		"docs:preview": "vitepress serve",
+		"dev": "vitepress dev",
+		"build": "vitepress build",
+		"preview": "vitepress serve",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [],

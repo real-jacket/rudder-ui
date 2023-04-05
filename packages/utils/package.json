@@ -1,6 +1,6 @@
 {
   "name": "@rudder-ui/utils",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "",
   "main": "lib/index.js",
   "module": "es",
@@ -10,6 +10,7 @@
     "es"
   ],
   "scripts": {
+    "dev": "rollup -c -w",
     "build": "rollup -c",
     "prepublishOnly": "pnpm run build"
   },
@@ -26,6 +27,9 @@
     "./lib/*.js": "./lib/*.js",
     "./lib/*": "./lib/*.js",
     "./*": "./*"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "rudder-ui",

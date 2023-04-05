@@ -1,22 +1,23 @@
 {
-	"private": "true",
+	"private": true,
 	"workspaces": [
 		"packages/*",
-		"docs",
 		"site"
 	],
 	"version": "0.0.1",
 	"scripts": {
-		"site:dev": "pnpm run -C site docs:dev",
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"site:dev": "pnpm run -C site dev",
 		"site:build": "pnpm run -C site docs:build",
 		"site:preview": "pnpm run -C site docs:preview",
-		"docs:dev": "pnpm run -C docs dev",
-		"docs:build": "pnpm run -C docs build",
-		"build:component": "pnpm run -C packages/components build"
+		"component:build": "pnpm run -C packages/components build",
+		"clear": "pnpm -w -r exec rm -rf node_modules"
 	},
 	"devDependencies": {
 		"@types/node": "^18.7.13",
 		"esbuild": "^0.15.5",
+		"turbo": "^1.8.8",
 		"vue": "^3.2.37"
 	}
 }

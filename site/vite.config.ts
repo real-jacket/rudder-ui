@@ -11,18 +11,18 @@ import path from 'path'
 
 const alias: Alias[] = []
 
-if (process.env.NODE_ENV !== 'production') {
-	alias.push(
-		{
-			find: /^rudder-ui$/,
-			replacement: path.resolve('..', 'packages/components/index.ts'),
-		},
-		{
-			find: /^rudder-ui(\/(es|lib))?\/(.*)$/,
-			replacement: `${path.resolve('..', 'packages/components')}/$3`,
-		}
-	)
-}
+// if (process.env.NODE_ENV !== 'production') {
+// 	alias.push(
+// 		{
+// 			find: /^rudder-ui$/,
+// 			replacement: path.resolve('..', 'packages/components/index.ts'),
+// 		},
+// 		{
+// 			find: /^rudder-ui(\/(es|lib))?\/(.*)$/,
+// 			replacement: `${path.resolve('..', 'packages/components')}/$3`,
+// 		}
+// 	)
+// }
 
 //@ts-ignore
 export default defineConfig(() => {

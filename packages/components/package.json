@@ -27,6 +27,7 @@
 	},
 	"unpkg": "./dist/index.js",
 	"scripts": {
+		"dev": "vite build -w",
 		"build": "vite build"
 	},
 	"publishConfig": {
@@ -48,6 +49,6 @@
 		"vue": "^3.2.37"
 	},
 	"dependencies": {
-		"@rudder-ui/utils": "workspace:^0.0.1"
+		"@rudder-ui/utils": "workspace:^0.0.0"
 	}
 }
