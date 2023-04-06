@@ -3,7 +3,7 @@
 		<h1>Rudder UI</h1>
 		<h2>一个简洁、高效、轻量、友好的 UI 组件库</h2>
 		<p class="actions">
-			<a class="quick-start" @click="go(`/${lang}/guide/quickstart`)"
+			<a class="quick-start" @click="direct('/guide/quickstart')"
 				>快速起步 <i-rudder-doc-right-arrow class="arrow" />
 			</a>
 			<a
@@ -42,11 +42,9 @@
 </template>
 
 <script setup lang="ts">
-import { useData, useRouter } from 'vitepress'
-const themeData = useData()
-const lang = themeData.lang.value
+import { useDirect } from '../../utils/direct'
 
-const { go } = useRouter()
+const { direct } = useDirect()
 </script>
 
 <style lang="scss" scoped>

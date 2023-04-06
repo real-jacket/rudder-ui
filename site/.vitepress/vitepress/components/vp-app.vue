@@ -2,18 +2,18 @@
 import { useData, useRouter } from 'vitepress'
 import { onMounted } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-
-const { Layout } = DefaultTheme
-const { route, go } = useRouter()
+import { useDirect } from '../../utils/direct'
 const themeData = useData()
-const lang = themeData.lang.value
 const base = themeData.site.value.base
 
-const homeUrl = `${base}${lang}/`
+const { Layout } = DefaultTheme
+const { route } = useRouter()
+
+const { homeUrl, direct } = useDirect()
 
 onMounted(() => {
 	if (route.path === base) {
-		go(homeUrl)
+		direct()
 	}
 
 	const logTitle = document.querySelector('.VPNavBarTitle > .title')
