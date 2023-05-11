@@ -1,0 +1,21 @@
+$h: 32px;
+$border-color: #918787;
+$color: #333;
+$blue: #40a9ff;
+$red: red;
+$grey: grey;
+
+:root {
+	--r-border-color: #{$blue};
+	--r-border-radius: 4px;
+}
+
+html:not(.dark) {
+	--r-text-color: #333;
+	--r-background: #fff;
+}
+
+html.dark {
+	--r-text-color: #fff;
+	--r-background: #333;
+}

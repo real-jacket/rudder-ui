@@ -1,5 +1,5 @@
 const typescript = require('rollup-plugin-typescript2')
-const { terser } = require('rollup-plugin-terser')
+const terser = require('@rollup/plugin-terser')
 const pkg = require('./package.json')
 
 module.exports = {

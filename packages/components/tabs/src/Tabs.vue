@@ -83,13 +83,12 @@ export default defineComponent({
 
 <style lang="scss">
 $blue: #40a9ff;
-$color: #333;
 $border-color: #d9d9d9;
 
 .rudder-tabs {
 	&-nav {
 		display: flex;
-		color: $color;
+		color: var(--r-text-color);
 		border-bottom: 1px solid $border-color;
 
 		&-item {
