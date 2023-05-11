@@ -1,6 +1,5 @@
+import 'rudder-ui/dist/rudder.css'
 import RudderUi, { directive } from 'rudder-ui'
-
-import 'rudder-ui/dist/index.css'
 
 import VPApp from '../vitepress'
 import VPDemo from '../vitepress/components/vp-demo.vue'
