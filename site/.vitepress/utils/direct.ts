@@ -7,11 +7,11 @@ export function useDirect() {
 
 	const { go } = useRouter()
 
-	const urlPrefix = `${base}${lang}/`
+	const urlPrefix = `${base}${lang}`
 
-	const direct = (path: string = '') => {
+	const direct = (path: string = '/') => {
 		return go(urlPrefix + path)
 	}
 
-	return { direct, homeUrl: urlPrefix }
+	return { direct, homeUrl: urlPrefix + '/' }
 }
