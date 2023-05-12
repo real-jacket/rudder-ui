@@ -32,20 +32,23 @@ const externalScssPlugin: (options?: {
 						fileName.replace(vue_prefix, '')
 				}
 
-				// 自动引入 css
-				if (/\.vue\.js$/.test(name)) {
+				// 自动引入 css,包括入口文件自动引入基础 css
+				if (/\.vue\.js$/.test(name) || name === 'index.js') {
 					const fileName = name.split('/').pop().split('.')[0]
 
 					//@ts-ignore
 					const code = bundle[name].code
 
-					if (options.format !== 'umd' && !!bundle[fileName + `${vue_prefix}.css`]) {
+					if (
+						options.format !== 'umd' &&
+						(!!bundle[fileName + `${vue_prefix}.css`] || fileName === 'index')
+					) {
 						// cjs 模块处理 use strict
 						if (code.includes('"use strict";')) {
 							//@ts-ignore
 							bundle[name].code = bundle[name].code.replace(
-								'"use strict";\n',
-								`"use strict";\nimport "./${fileName}.css";\n`
+								'"use strict";',
+								`"use strict";require("./${fileName}.css");`
 							)
 						} else {
 							// es 模块引入 css
@@ -69,8 +72,8 @@ const externalScssPlugin: (options?: {
 				name: name,
 			}
 
-			//  umd 环境不需要生成 sourcemap
 			if (options.format !== 'umd') {
+				//  umd 环境不需要生成 sourcemap
 				const mapName = name + '.map'
 				bundle[mapName] = {
 					fileName: mapName.replace('scss', 'css'),
@@ -97,7 +100,7 @@ export default defineConfig({
 			outputDir: [path.resolve(__dirname, './es')],
 		}),
 		externalScssPlugin({
-			externalCss: path.resolve(__dirname, './rudder.scss'),
+			externalCss: path.resolve(__dirname, './index.scss'),
 		}),
 	],
 	base: './',
