@@ -1,3 +1,4 @@
+import 'rudder-ui/dist/rudder.css'
 import RudderUi, { directive } from 'rudder-ui'
 
 import VPApp from '../vitepress'
