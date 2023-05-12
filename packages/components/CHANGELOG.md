@@ -1,5 +1,11 @@
 # rudder-ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 85afab7: import css in entry file
+
 ## 0.2.0
 
 ### Minor Changes
