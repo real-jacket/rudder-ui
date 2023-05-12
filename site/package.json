@@ -37,7 +37,7 @@
 		"escape-html": "^1.0.3",
 		"prism-theme-vars": "^0.2.4",
 		"prismjs": "^1.29.0",
-		"rudder-ui": "workspace:^0.1.0",
+		"rudder-ui": "workspace:^0.2.0",
 		"vue": "^3.2.37"
 	}
 }
