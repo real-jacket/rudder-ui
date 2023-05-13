@@ -43,7 +43,7 @@ button/disabled
 
 ## 加载状态
 
-:::demo  通过设置 loading 属性（布尔值）来控制按钮的加载状态
+:::demo 通过设置 loading 属性（布尔值）来控制按钮的加载状态
 
 button/loading
 

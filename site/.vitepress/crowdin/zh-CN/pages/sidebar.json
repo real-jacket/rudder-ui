@@ -1,17 +1,17 @@
 [
-    {
-        "text": "指南",
-        "link": "/guide/intro",
-        "activeMatch": "/guide/"
-    },
-    {
-        "text": "组件",
-        "link": "/component/button",
-        "activeMatch": "/component/"
-    },
-    {
-        "text": "资源",
-        "link": "/resource/xxx",
-        "activeMatch": "/resource/"
-    }
+	{
+		"text": "指南",
+		"link": "/guide/intro",
+		"activeMatch": "/guide/"
+	},
+	{
+		"text": "组件",
+		"link": "/component/button",
+		"activeMatch": "/component/"
+	},
+	{
+		"text": "资源",
+		"link": "/resource/xxx",
+		"activeMatch": "/resource/"
+	}
 ]

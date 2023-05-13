@@ -2,12 +2,8 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"composite": true,
-		"lib": [
-			"ESNext"
-		],
-		"types": [
-			"node"
-		],
+		"lib": ["ESNext"],
+		"types": ["node"],
 		"skipLibCheck": true,
 		"allowSyntheticDefaultImports": true
 	},
@@ -17,10 +13,5 @@
 		"packages/components/vite.config.ts",
 		"site/**/*"
 	],
-	"exclude": [
-		"**/__tests__/**",
-		"**/tests/**",
-		"**/dist",
-		"node_modules"
-	]
+	"exclude": ["**/__tests__/**", "**/tests/**", "**/dist", "node_modules"]
 }
