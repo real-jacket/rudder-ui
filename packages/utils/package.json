@@ -1,50 +1,50 @@
 {
-  "name": "@rudder-ui/utils",
-  "version": "0.2.0",
-  "description": "",
-  "main": "lib/index.js",
-  "module": "es",
-  "types": "es",
-  "files": [
-    "lib",
-    "es"
-  ],
-  "maintainers": [
-    "realjacket"
-  ],
-  "scripts": {
-    "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "prepublishOnly": "pnpm run build"
-  },
-  "exports": {
-    ".": {
-      "require": "./lib/index.js",
-      "import": "./es/index.js",
-      "types": "./es/index.d.ts"
-    },
-    "./es": "./es/index.js",
-    "./lib": "./lib/index.js",
-    "./es/*.mjs": "./es/*.js",
-    "./es/*": "./es/*.js",
-    "./lib/*.js": "./lib/*.js",
-    "./lib/*": "./lib/*.js",
-    "./*": "./*"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "rudder-ui",
-    "utils"
-  ],
-  "author": "realjacket",
-  "license": "ISC",
-  "devDependencies": {
-    "rollup": "^3.20.2",
-    "rollup-plugin-typescript2": "^0.34.1",
-    "tslib": "^2.5.0",
-    "typescript": "^4.6.4",
-    "vue": "^3.2.37"
-  }
+	"name": "@rudder-ui/utils",
+	"version": "0.2.0",
+	"description": "",
+	"main": "lib/index.js",
+	"module": "es",
+	"types": "es",
+	"files": [
+		"lib",
+		"es"
+	],
+	"maintainers": [
+		"realjacket"
+	],
+	"scripts": {
+		"dev": "rollup -c -w",
+		"build": "rollup -c",
+		"prepublishOnly": "pnpm run build"
+	},
+	"exports": {
+		".": {
+			"require": "./lib/index.js",
+			"import": "./es/index.js",
+			"types": "./es/index.d.ts"
+		},
+		"./es": "./es/index.js",
+		"./lib": "./lib/index.js",
+		"./es/*.mjs": "./es/*.js",
+		"./es/*": "./es/*.js",
+		"./lib/*.js": "./lib/*.js",
+		"./lib/*": "./lib/*.js",
+		"./*": "./*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"rudder-ui",
+		"utils"
+	],
+	"author": "realjacket",
+	"license": "ISC",
+	"devDependencies": {
+		"rollup": "^3.20.2",
+		"rollup-plugin-typescript2": "^0.34.1",
+		"tslib": "^2.5.0",
+		"typescript": "^4.6.4",
+		"vue": "^3.2.37"
+	}
 }

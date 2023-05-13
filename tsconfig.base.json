@@ -15,10 +15,8 @@
 		"rootDir": ".",
 		"types": [],
 		"paths": {
-			"rudder-ui/*": [
-				"packages/components/*"
-			]
+			"rudder-ui/*": ["packages/components/*"]
 		},
-		"jsx": "preserve",
+		"jsx": "preserve"
 	}
 }

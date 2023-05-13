@@ -29,7 +29,7 @@ import 'rudder-ui/dist/lib/rudder.css'
 使用组件
 
 ```js
-import {Button, Tabs, Switch, Dialog} from "rudder-ui"
+import { Button, Tabs, Switch, Dialog } from 'rudder-ui'
 ```
 
 ## Vue 单文件组件
@@ -38,14 +38,14 @@ import {Button, Tabs, Switch, Dialog} from "rudder-ui"
 
 ```vue
 <template>
-  <div>
-    <Button>按钮</Button>
-  </div>
+	<div>
+		<Button>按钮</Button>
+	</div>
 </template>
 <script>
-import {Button, Tabs, Switch, Dialog} from "rudder-ui"
+import { Button, Tabs, Switch, Dialog } from 'rudder-ui'
 export default {
-  components: {Button}
+	components: { Button },
 }
 </script>
 ```
@@ -53,4 +53,3 @@ export default {
 # 计划
 
 基于 vue3 + vite + vitepress + pnpm + monorepo 的方案正在开发中，代码分支 ele-dev
- 
