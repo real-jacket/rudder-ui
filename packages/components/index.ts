@@ -1,4 +1,5 @@
-import type { App, Plugin, Directive } from 'vue'
+import './index.scss'
+import type { Plugin, Directive } from 'vue'
 
 import RSwitch from './switch'
 import RButton from './button'
@@ -19,7 +20,7 @@ export * from './directive'
 const components = [RSwitch, RButton, RTabs, RDialog, RContainer] as Plugin[]
 
 const rudderPlugin = () => {
-	const install = (app: App, ...options: any[]) => {
+	const install: Plugin = (app, ...options) => {
 		components.forEach((c) => {
 			app.use(c)
 		})
@@ -29,4 +30,4 @@ const rudderPlugin = () => {
 	}
 }
 
-export default rudderPlugin() as Plugin
+export default rudderPlugin()

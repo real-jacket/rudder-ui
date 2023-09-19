@@ -20,13 +20,17 @@
 			"import": "./es/index.js",
 			"types": "./es/index.d.ts"
 		},
+		"./index.css": {
+			"require": "./lib/index.css",
+			"import": "./es/index.css"
+		},
 		"./es": "./es/index.js",
 		"./lib": "./lib/index.js",
 		"./es/*.mjs": "./es/*.js",
 		"./es/*": "./es/*.js",
 		"./lib/*.js": "./lib/*.js",
 		"./lib/*": "./lib/*.js",
-		"./*": "./*"
+		"./*": "./es*"
 	},
 	"unpkg": "./dist/index.js",
 	"scripts": {

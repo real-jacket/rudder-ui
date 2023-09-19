@@ -1,4 +1,4 @@
-import { defineConfig, PluginOption } from 'vite'
+import { defineConfig, Plugin } from 'vite'
 import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
@@ -7,9 +7,9 @@ import * as dartSass from 'sass'
 import VueMacros from 'unplugin-vue-macros/dist/vite.js'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-const externalScssPlugin: (options?: {
-	externalCss: string
-}) => PluginOption = (options) => {
+const externalScssPlugin: (options?: { externalCss: string }) => Plugin = (
+	options
+) => {
 	const { externalCss } = options || {}
 
 	const vue_prefix = '.vue_vue_type_style_index_0_lang'
@@ -21,7 +21,8 @@ const externalScssPlugin: (options?: {
 			const moduleIds = [...this.getModuleIds()]
 
 			Object.keys(bundle).map((name) => {
-				if (name.includes('.css')) {
+				console.log('name: ', name)
+				if (name.includes('.vue_vue_type_style_index_0_lang.css')) {
 					const fileName = bundle[name].fileName
 					const moduleId = moduleIds.find((item) =>
 						item.includes(bundle[name].name.split('.css')[0])
@@ -60,27 +61,28 @@ const externalScssPlugin: (options?: {
 			})
 
 			// 处理额外的scss文件，并合并到 bundle 中进行输出
-			const result = dartSass.compile(path.relative(__dirname, externalCss), {
-				sourceMap: true,
-			})
-			const name = path.relative(__dirname, externalCss)
-			bundle[name] = {
-				fileName: name.replace('scss', 'css'),
-				source: result.css,
-				type: 'asset',
-				needsCodeReference: true,
-				name: name,
-			}
-
-			if (options.format !== 'umd') {
-				//  umd 环境不需要生成 sourcemap
-				const mapName = name + '.map'
-				bundle[mapName] = {
-					fileName: mapName.replace('scss', 'css'),
-					source: JSON.stringify(result.sourceMap),
+			if (externalCss) {
+				const result = dartSass.compile(path.relative(__dirname, externalCss), {
+					sourceMap: true,
+				})
+				const name = path.relative(__dirname, externalCss)
+				bundle[name] = {
+					fileName: name.replace('scss', 'css'),
+					source: result.css,
 					type: 'asset',
 					needsCodeReference: true,
-					name: mapName,
+					name: name,
+				}
+				if (options.format !== 'umd') {
+					//  umd 环境不需要生成 sourcemap
+					const mapName = name + '.map'
+					bundle[mapName] = {
+						fileName: mapName.replace('scss', 'css'),
+						source: JSON.stringify(result.sourceMap),
+						type: 'asset',
+						needsCodeReference: true,
+						name: mapName,
+					}
 				}
 			}
 		},
@@ -99,9 +101,10 @@ export default defineConfig({
 			entryRoot: '.',
 			outputDir: [path.resolve(__dirname, './es')],
 		}),
-		externalScssPlugin({
-			externalCss: path.resolve(__dirname, './index.scss'),
-		}),
+		{
+			...externalScssPlugin(),
+			apply: 'build',
+		},
 	],
 	base: './',
 	css: {},
