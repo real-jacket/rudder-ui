@@ -49,13 +49,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-$h: 32px;
-$border-color: #d9d9d9;
-$color: #333;
-$blue: #40a9ff;
-$radius: 4px;
-$red: red;
-$grey: grey;
+@import '../../style/variables.scss';
 
 .rudder-button {
 	height: $h;

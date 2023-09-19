@@ -1,7 +1,11 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./",
-		"lib": ["ESNext", "DOM", "DOM.Iterable"],
+		"lib": [
+			"ESNext",
+			"DOM",
+			"DOM.Iterable"
+		],
 		"strictNullChecks": false,
 		"moduleResolution": "node",
 		"esModuleInterop": true,
@@ -14,7 +18,9 @@
 		"module": "esnext",
 		"skipLibCheck": true,
 		"allowJs": true,
-		"types": ["unplugin-vue-macros/macros-global"]
+		"types": [
+			"unplugin-vue-macros/macros-global"
+		],
 	},
 	"exclude": [
 		"node_modules",

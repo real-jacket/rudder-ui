@@ -5,7 +5,6 @@
 </template>
 <script lang="ts" setup>
 import { computed } from 'vue'
-
 import type { CSSProperties } from 'vue'
 import { nameSpaceClass } from '@rudder-ui/utils'
 
