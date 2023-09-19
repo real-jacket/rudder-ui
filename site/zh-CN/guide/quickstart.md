@@ -10,13 +10,16 @@ lang: zh-CN
 然后在你的代码中写入下面的代码
 
 ```js
-import { Button, Tabs, Switch, Dialog } from 'rudder-ui'
+import { RButton, RTabs, RSwitch, RDialog } from 'rudder-ui'
 ```
 
-全局引入样式
+也可以单独引入某个组件，但是需要全局引入基础样式
 
 ```js
-import 'rudder-ui/dist/lib/rudder.css'
+import 'rudder-ui/index.css'
+
+import RButton from 'rudder-ui/es/button'
+
 ```
 
 就可以使用我提供的组件了。
