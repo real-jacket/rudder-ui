@@ -1,5 +1,12 @@
 # rudder-ui
 
+## 0.3.1
+
+### Patch Changes
+
+- dc99b57: update scss style build
+- c371d23: fix use scss variable with css var
+
 ## 0.3.0
 
 ### Minor Changes
